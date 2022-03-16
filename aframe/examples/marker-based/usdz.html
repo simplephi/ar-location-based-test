@@ -5,9 +5,18 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
 	
-	<a rel="ar" href="../image-tracking/nft/usdz/torus_gold.usdz">
-		<img src="../image-tracking/nft/trex-image-small.jpg" width="150" height="150">
-	</a>
+		<a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity
+            position="0 0 0"
+            rotation="0 0 0"
+            scale="0.05 0.05 0.05"
+            gltf-model="../image-tracking/nft/usdz/torus_gold.gltf"
+            ></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
        
     </body>
+	
 </html>
