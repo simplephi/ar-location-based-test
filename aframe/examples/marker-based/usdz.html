@@ -5,18 +5,15 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
 	
-		<!--a-scene embedded arjs renderer="colorManagement: true"-->
-		<!-- a-marker preset="hiro" -->
+		
 		
 		<a-scene embedded arjs renderer="colorManagement: true">
-			<!-- a-marker preset="pattern" type="pattern" patternUrl="../assets/gold.patt" -->
 			<a-marker preset="hiro">
 				<a-entity light="type: ambient; intensity: 1.0;"></a-entity>
 				<a-entity
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
-					
 					gltf-model="../image-tracking/nft/usdz/torus_gold.gltf"
 				></a-entity>
 			</a-marker>
