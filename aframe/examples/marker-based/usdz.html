@@ -5,7 +5,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
 	
-		<a-scene embedded arjs renderer="colorManagement: true;">
+		<a-scene embedded arjs>
 		
 			<a-entity light="type: ambient;">
 			
@@ -16,7 +16,8 @@
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
-					gltf-model="../image-tracking/nft/usdz/torus_gold_original.gltf"
+					light="type: ambient;"
+					gltf-model="../image-tracking/nft/usdz/torus_gold.gltf"
 				></a-entity>
 			</a-marker>
 			<a-entity camera></a-entity>
