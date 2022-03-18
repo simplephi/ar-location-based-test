@@ -6,7 +6,7 @@
 		<script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
 		<script src="https://raw.githubusercontent.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 		<script>
-		  AFRAME.registerComponent("gold", {
+		  AFRAME.registerComponent("foo", {
 			init: function() {
 			  this.el.addEventListener("model-loaded", e => {
 				console.log(e);
@@ -43,8 +43,9 @@
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
+					light="type: ambient; intensity: 10.2"
 					gltf-model="#torus"
-					gold
+					foo
 				></a-entity>
 			</a-marker>
 			<a-entity camera></a-entity>
