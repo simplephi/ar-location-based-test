@@ -29,19 +29,18 @@
 	</head>
     <body style="margin : 0px; overflow: hidden;">
 	
-		<a-scene embedded arjs renderer="colorManagement: true; physicallyCorrectLights: true;">
+		<a-scene embedded arjs>
 		
 			<a-assets>
-				<a-asset-item id="torus" src="../image-tracking/nft/usdz/torus_gold.gltf"></a-asset-item>
+				<a-asset-item id="torus" src="../image-tracking/nft/usdz/torus_gold_original.gltf"></a-asset-item>
 			</a-assets>
 		
 			<a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/gold.patt">
-			<!-- a-marker preset="hiro" -->
+			
 				<a-entity
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
-					
 					gltf-model="#torus"
 					gold
 				></a-entity>
