@@ -2,6 +2,28 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+		<script>
+		  AFRAME.registerComponent("gold", {
+			init: function() {
+			  this.el.addEventListener("model-loaded", e => {
+				console.log(e);
+				let model = this.el.getObject3D("mesh");
+				model.traverse(function(node) {
+				  if (!node.material) return;
+
+				  var tmp = node.material
+				  node.material = new THREE.MeshStandardMaterial({
+					skinning: true,
+					map: node.material.map
+				  });
+				  node.material.needsUpdate = true;
+				  tmp.dispose()
+				});
+			  });
+			}
+		  });
+		</script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-marker preset="hiro">
@@ -11,6 +33,7 @@
           position="0 0 0"
           scale="0.05 0.05 0.05"
           gltf-model="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/image-tracking/nft/usdz/torus_gold.gltf"
+		  gold
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
