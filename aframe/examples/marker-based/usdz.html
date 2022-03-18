@@ -34,7 +34,7 @@
                    sortObjects: true;
                    physicallyCorrectLights: true;">
 		
-			<a-entity light="type: ambient; intensity: 10.2"></a-entity>
+			<a-light type="ambient" color="#222"></a-light>
 			<a-assets>
 				<!-- Blender adjust -->
 				<!-- a-asset-item id="torus" src="../image-tracking/nft/usdz/torus_gold1.gltf"></a-asset-item -->
@@ -50,7 +50,7 @@
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
 					src="#torus"
-					
+					gold
 				></a-gltf-model>
 			</a-marker>
 			<a-entity camera></a-entity>
