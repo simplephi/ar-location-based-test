@@ -43,13 +43,17 @@
 		
 			<a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/gold.patt">
 			<!-- a-marker preset="hiro" -->
-				<a-entity
+				<!-- a-entity
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.05 0.05 0.05"
 					gltf-model-next="#torus"
 					gold
-				></a-entity>
+				></a-entity -->
+				<a-entity
+				  gltf-model-next="src: url(../image-tracking/nft/usdz/torus_gold.gltf);"
+				>
+				</a-entity>
 			</a-marker>
 			<a-entity camera></a-entity>
         </a-scene>
