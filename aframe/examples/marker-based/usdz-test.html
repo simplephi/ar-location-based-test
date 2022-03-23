@@ -66,31 +66,55 @@
 	</head>
     <body style="margin : 0px; overflow: hidden;">
 
-		<a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;">
+			<a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;">
 
-			<!-- <a-entity light="type: ambient; intensity: 5"></a-entity> -->
-
-
-				<a-assets>
-					<!-- <a-asset-item id="torus-obj" src="../image-tracking/nft/obj/torus_gold.obj"></a-asset-item>
-					<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/material.lib"></a-asset-item> -->
-					<a-asset-item id="torus-obj" src="../image-tracking/nft/obj/see.obj"></a-asset-item>
-					<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/see.mtl"></a-asset-item>
-			  </a-assets>
+				<!-- <a-entity light="type: ambient; intensity: 5"></a-entity> -->
 
 
-			<a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/gold.patt">
-			<!-- a-marker preset="hiro" -->
-				<a-entity
-					position="0 0 0"
-					rotation="0 0 0"
-					scale="0.2 0.2 0.2"
-					obj-model="obj: #torus-obj; mtl: #gold-mtl"
-				></a-entity>
+					<a-assets>
+						<!-- <a-asset-item id="torus-obj" src="../image-tracking/nft/obj/torus_gold.obj"></a-asset-item>
+						<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/material.lib"></a-asset-item> -->
+						<a-asset-item id="torus-obj" src="../image-tracking/nft/obj/see.obj"></a-asset-item>
+						<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/see.mtl"></a-asset-item>
+				  </a-assets>
+					<a-assets>
+						<!-- <a-asset-item id="torus-obj" src="../image-tracking/nft/obj/torus_gold.obj"></a-asset-item>
+						<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/material.lib"></a-asset-item> -->
+						<a-asset-item id="torus_gold_older-obj" src="../image-tracking/nft/obj/torus_gold_older.obj"></a-asset-item>
+						<a-asset-item id="torus_gold_older-mtl" src="../image-tracking/nft/obj/torus_gold_older.mtl"></a-asset-item>
+				  </a-assets>
+					<a-assets>
+						<!-- <a-asset-item id="torus-obj" src="../image-tracking/nft/obj/torus_gold.obj"></a-asset-item>
+						<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/material.lib"></a-asset-item> -->
+						<a-asset-item id="torus_gold_oldest-obj" src="../image-tracking/nft/obj/torus_gold_oldest.obj"></a-asset-item>
+						<a-asset-item id="torus_gold_oldest-mtl" src="../image-tracking/nft/obj/torus_gold_oldest.mtl"></a-asset-item>
+				  </a-assets>
 
-			</a-marker>
-			<a-entity camera></a-entity>
-        </a-scene>
+
+				<a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/gold.patt">
+				<!-- a-marker preset="hiro" -->
+					<a-entity
+						position="0 0 0"
+						rotation="0 0 0"
+						scale="0.05 0.05 0.05"
+						obj-model="obj: #torus-obj; mtl: #gold-mtl"
+					></a-entity>
+					<a-entity
+						position="0 0 0"
+						rotation="0 0 0"
+						scale="0.1 0.1 0.1"
+						obj-model="obj: #torus_gold_older-obj; mtl: #torus_gold_older-mtl"
+					></a-entity>
+					<a-entity
+						position="0 0 0"
+						rotation="0 0 0"
+						scale="0.2 0.2 0.2"
+						obj-model="obj: #torus_gold_oldest-obj; mtl: #torus_gold_oldest-mtl"
+					></a-entity>
+
+				</a-marker>
+				<a-entity camera></a-entity>
+	    </a-scene>
 
     </body>
 
