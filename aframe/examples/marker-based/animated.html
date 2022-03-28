@@ -17,8 +17,9 @@
 
 			<a-assets>
 		    <!-- <a-asset-item id="monster" src="../assets/fbx/stand.fbx"></a-asset-item> -->
-		    <a-asset-item id="monster" src="../assets/fbx/Crouch To Stand.fbx"></a-asset-item>
+		    <!-- <a-asset-item id="monster" src="../assets/fbx/Crouch To Stand.fbx"></a-asset-item> -->
 		    <!-- <a-asset-item id="monster" src="../assets/gltf/Bee.glb"></a-asset-item> -->
+		    <a-asset-item id="monster" src="../assets/gltf/stand-new.gltf"></a-asset-item>
 		    <!-- <a-asset-item id="monster" src="../assets/gltf/phoenix_bird/scene.gltf"></a-asset-item> -->
 		  </a-assets>
 
@@ -31,9 +32,9 @@
 				<a-entity
 					position="0 0 0"
 					rotation="0 0 0"
-					scale="0.01 0.01 0.01"
-					fbx-model="src: url(https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/fbx/stand.fbx);"
-
+					scale="0.05 0.05 0.05"
+					gltf-model="#monster"
+					animation-mixer
 				></a-entity>
 
 			</a-marker>
