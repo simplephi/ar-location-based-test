@@ -9,7 +9,7 @@
 	</head>
   <body style="margin : 0px; overflow: hidden;">
 
-		<a-scene embedded arjs >
+		<a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;">
 
 			<a-entity light="type: ambient;  intensity: 5"></a-entity>
 
@@ -30,7 +30,7 @@
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.1 0.1 0.1"
-					fbx-model="#monster"
+					fbx-model="src: url(https://github.com/simplephi/ar-location-based-test/blob/main/aframe/examples/assets/fbx/stand.fbx);"
 					animation-mixer
 				></a-entity>
 
