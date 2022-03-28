@@ -5,37 +5,18 @@
 		<!-- we import arjs version without NFT but with marker + location based support -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
 		<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-		<script>
-		  AFRAME.registerComponent("gold", {
-			init: function() {
-			  this.el.addEventListener("model-loaded", e => {
-				console.log(e);
-				let model = this.el.getObject3D("mesh");
-				model.traverse(function(node) {
-				  if (!node.material) return;
 
-				  var tmp = node.material
-				  node.material = new THREE.MeshStandardMaterial({
-					skinning: true,
-					map: node.material.map
-				  });
-				  node.material.needsUpdate = true;
-				  tmp.dispose()
-				});
-			  });
-			}
-		  });
-		</script>
 	</head>
   <body style="margin : 0px; overflow: hidden;">
 
-		<a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;">
+		<a-scene embedded arjs >
 
 			<a-entity light="type: ambient;  intensity: 5"></a-entity>
 
 
 			<a-assets>
-		    <a-asset-item id="monster" src="../assets/gltf/Bee.glb"></a-asset-item>
+		    <a-asset-item id="monster" src="../assets/fbx/stand.fbx"></a-asset-item>
+		    <!-- <a-asset-item id="monster" src="../assets/gltf/Bee.glb"></a-asset-item> -->
 		    <!-- <a-asset-item id="monster" src="../assets/gltf/phoenix_bird/scene.gltf"></a-asset-item> -->
 		  </a-assets>
 
@@ -49,7 +30,7 @@
 					position="0 0 0"
 					rotation="0 0 0"
 					scale="0.1 0.1 0.1"
-					gltf-model="#monster"
+					fbx-model="#monster"
 					animation-mixer
 				></a-entity>
 
