@@ -33,11 +33,12 @@ AFRAME.registerComponent('markers_start',{
 
 			// gltf model
 
-			textEl.removeAttribute('gltf-model');
 			textEl.setAttribute('gltf-model', '#monster');
 			textEl.object3D.position.set(0, 0, 0);
-			textEl.object3D.scale.set(0.1, 0.1, 0.1);
+			textEl.object3D.scale.set(0.2, 0.2, 0.2);
 			textEl.object3D.rotation.set(0, 0, 0);
+			textEl.setAttribute('animation-mixer');
+
 
 			console.log('Model component registered successfully 1!');
 			markerEl.appendChild(textEl);
