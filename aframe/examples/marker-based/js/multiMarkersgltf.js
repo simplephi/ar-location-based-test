@@ -28,9 +28,8 @@ AFRAME.registerComponent('markers_start',{
 			//Adding text to each marker
 			var textEl = document.createElement('a-entity');
 
-			// textEl.setAttribute('id','text');
+			textEl.setAttribute('id','text');
 			// textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
-			textEl.setAttribute('id');
 
 			// gltf model
 
@@ -40,9 +39,9 @@ AFRAME.registerComponent('markers_start',{
 			textEl.object3D.scale.set(0.1, 0.1, 0.1);
 			textEl.object3D.rotation.set(0, 0, 0);
 
-			console.log(this.textEl.toString() + ': Model component registered successfully 1!');
+			console.log('Model component registered successfully 1!');
 			markerEl.appendChild(textEl);
-			console.log(this.textEl.toString() + ': Model component registered successfully 2!');
+			console.log('Model component registered successfully 2!');
 		}
 	}
 });
