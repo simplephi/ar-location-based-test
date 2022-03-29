@@ -31,12 +31,18 @@ AFRAME.registerComponent('markers_start',{
 			// textEl.setAttribute('id','text');
 			// textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
 			textEl.setAttribute('id');
-			textEl.setAttribute('gltf-model', '../assets/gltf/Bee.glb');
+
+			// gltf model
+
+			textEl.removeAttribute('gltf-model');
+			textEl.setAttribute('gltf-model', '#monster');
 			textEl.object3D.position.set(0, 0, 0);
 			textEl.object3D.scale.set(0.1, 0.1, 0.1);
 			textEl.object3D.rotation.set(0, 0, 0);
 
+			console.log(this.textEl.toString() + ': Model component registered successfully 1!');
 			markerEl.appendChild(textEl);
+			console.log(this.textEl.toString() + ': Model component registered successfully 2!');
 		}
 	}
 });
