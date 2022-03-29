@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+		<script src="./js/multiMarkersgltf.js"></script>
+
+	</head>
+  <body style="margin : 0px; overflow: hidden;">
+
+		<!-- <a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;"> -->
+		<a-scene markers_start renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;"  vr-mode-ui="enabled: false" color-space="sRGB" embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+
+				<a-entity light="type: ambient;  intensity: 5"></a-entity>
+
+
+				<a-assets>
+			    <!-- <a-asset-item id="monster" src="../assets/fbx/stand.fbx"></a-asset-item> -->
+			    <!-- <a-asset-item id="monster" src="../assets/fbx/Crouch To Stand.fbx"></a-asset-item> -->
+			    <a-asset-item id="monster" src="../assets/gltf/Bee.glb"></a-asset-item>
+			    <!-- <a-asset-item id="monster" src="../assets/gltf/stand-new.gltf"></a-asset-item> -->
+			    <!-- <a-asset-item id="monster" src="../assets/gltf/phoenix_bird/scene.gltf"></a-asset-item> -->
+			  </a-assets>
+
+
+				<!-- a-marker preset="hiro" -->
+				<!-- <a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/gold.patt"> -->
+				<!-- <a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/clock.patt"> -->
+				<!-- <a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/clock-black.patt"> -->
+				<!-- <a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/clock-black-little.patt"> -->
+
+				<!-- <a-marker type="pattern" url="https://raw.githubusercontent.com/simplephi/ar-location-based-test/main/aframe/examples/assets/pattern-2.patt"> -->
+
+					<!-- <a-entity
+						position="0 0 0"
+						rotation="0 0 0"
+						scale="0.1 0.1 0.1"
+						gltf-model="#monster"
+						animation-mixer
+					></a-entity> -->
+
+				<!-- </a-marker> -->
+
+				<a-entity camera>
+					<a-cursor> </a-cursor>
+				</a-entity>
+
+    	</a-scene>
+
+    </body>
+
+</html>
