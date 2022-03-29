@@ -43,6 +43,7 @@ AFRAME.registerComponent('markers_start',{
 			console.log('Model component registered successfully 1!');
 			markerEl.appendChild(textEl);
 			console.log('Model component registered successfully 2!');
+			console.log(markerEl);
 		}
 	}
 });
