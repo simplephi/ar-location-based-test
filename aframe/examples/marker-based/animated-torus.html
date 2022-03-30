@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+		<script src="./js/multiMarkerstorus.js"></script>
+
+	</head>
+  <body style="margin : 0px; overflow: hidden;">
+
+		<!-- <a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;"> -->
+		<a-scene markers_start renderer="colorManagement: true; physicallyCorrectLights: true;"  vr-mode-ui="enabled: false" color-space="sRGB" embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+
+				<a-entity light="type: ambient;  intensity: 5"></a-entity>
+
+
+				<a-assets>
+					<a-assets>
+
+ 						<a-asset-item id="torus-obj" src="../image-tracking/nft/obj/see.obj"></a-asset-item>
+ 						<a-asset-item id="gold-mtl" src="../image-tracking/nft/obj/see.mtl"></a-asset-item>
+ 				  </a-assets>
+ 					<a-assets>
+
+ 						<a-asset-item id="torus_gold_older-obj" src="../image-tracking/nft/obj/torus_gold_older.obj"></a-asset-item>
+ 						<a-asset-item id="torus_gold_older-mtl" src="../image-tracking/nft/obj/torus_gold_older.mtl"></a-asset-item>
+ 				  </a-assets>
+ 					<a-assets>
+
+ 						<a-asset-item id="torus_gold_oldest-obj" src="../image-tracking/nft/obj/torus_gold_oldest.obj"></a-asset-item>
+ 						<a-asset-item id="torus_gold_oldest-mtl" src="../image-tracking/nft/obj/torus_gold_oldest.mtl"></a-asset-item>
+ 				  </a-assets>
+			  </a-assets>
+
+
+				<a-entity camera>
+					<a-cursor> </a-cursor>
+				</a-entity>
+
+    	</a-scene>
+
+    </body>
+
+</html>
