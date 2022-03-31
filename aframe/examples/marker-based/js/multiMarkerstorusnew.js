@@ -26,13 +26,16 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
+
+
+
 			//Adding element
 			var textEl = document.createElement('a-entity');
 			var textEl1 = document.createElement('a-entity');
 			var textEl2 = document.createElement('a-entity');
 
 			// obj model
-// 1
+			// 1
 			// textEl.setAttribute('gltf-model','#monster');
 			textEl.setAttribute('obj-model', {
 			  obj: '#torus-obj',
@@ -44,7 +47,7 @@ AFRAME.registerComponent('markers_start',{
 
 			markerEl.appendChild(textEl);
 
-// 2
+			// 2
 			textEl1.setAttribute('obj-model', {
 			  obj: '#torus_gold_older-obj',
 			  mtl: '#torus_gold_older-mtl'
@@ -54,8 +57,8 @@ AFRAME.registerComponent('markers_start',{
 			textEl1.object3D.rotation.set(0, 0, 0);
 
 			markerEl.appendChild(textEl1);
-// 3
 
+			// 3
 			textEl2.setAttribute('obj-model', {
 				obj: '#torus_gold_oldest-obj',
 				mtl: '#torus_gold_oldest-mtl'
