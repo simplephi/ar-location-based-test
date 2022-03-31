@@ -17,8 +17,8 @@ AFRAME.registerComponent('markers_start',{
 
 		for(var k=0; k<13; k++)
 		{
-			// var markerEl = document.createElement('a-marker');
-			var markerEl = document.createElement('a-marker-camera');
+			var markerEl = document.createElement('a-marker');
+			// var markerEl = document.createElement('a-marker-camera');
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
@@ -83,7 +83,7 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 				console.log('Marker Found: ', markerId);
-				console.log(marker);
+
 			});
 
 			marker.addEventListener("markerLost",() =>{
