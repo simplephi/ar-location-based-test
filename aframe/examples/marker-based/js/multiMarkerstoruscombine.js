@@ -20,6 +20,8 @@ AFRAME.registerComponent('markers_start',{
 		if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
 
+				console.log("before: ", position);
+
 				for(var k=0; k<13; k++)
 				{
 					var markerEl = document.createElement('a-marker');
@@ -77,7 +79,7 @@ AFRAME.registerComponent('markers_start',{
 
 
 
-					console.log('Model component registered successfully!');
+					console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
 					console.log(markerEl);
 				}
 			});
