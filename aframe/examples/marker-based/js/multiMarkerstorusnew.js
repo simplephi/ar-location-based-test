@@ -27,7 +27,6 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(markerEl);
 
 			//Adding element
-			var cursor = document.createElement('a-cursor');
 			var textEl = document.createElement('a-entity');
 			var textEl1 = document.createElement('a-entity');
 			var textEl2 = document.createElement('a-entity');
@@ -67,7 +66,6 @@ AFRAME.registerComponent('markers_start',{
 
 			markerEl.appendChild(textEl2);
 
-			markerEl.appendChild(cursor);
 
 
 			console.log('Model component registered successfully!');
