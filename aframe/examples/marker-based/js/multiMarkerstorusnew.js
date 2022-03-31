@@ -18,13 +18,14 @@ AFRAME.registerComponent('markers_start',{
 		for(var k=0; k<13; k++)
 		{
 			// var markerEl = document.createElement('a-marker');
-			var markerEl = document.createElement('a-marker-camera');
-			markerEl.setAttribute('type','pattern');
-			markerEl.setAttribute('url',markersURLArray[k]);
-			markerEl.setAttribute('id',markersNameArray[k]);
+			// var markerEl = document.createElement('a-marker-camera');
+			// markerEl.setAttribute('type','pattern');
+			// markerEl.setAttribute('url',markersURLArray[k]);
+			// markerEl.setAttribute('id',markersNameArray[k]);
+			//
+			// markerEl.setAttribute('registerevents','');
+			// sceneEl.appendChild(markerEl);
 
-			markerEl.setAttribute('registerevents','');
-			sceneEl.appendChild(markerEl);
 
 			//Adding element
 			var textEl = document.createElement('a-entity');
@@ -69,7 +70,13 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(textEl2);
 			// markerEl.appendChild(textEl2);
 
+			var markerEl = document.createElement('a-marker-camera');
+			markerEl.setAttribute('type','pattern');
+			markerEl.setAttribute('url',markersURLArray[k]);
+			markerEl.setAttribute('id',markersNameArray[k]);
 
+			markerEl.setAttribute('registerevents','');
+			sceneEl.appendChild(markerEl);
 
 			console.log('Model component registered successfully!');
 			console.log(sceneEl);
