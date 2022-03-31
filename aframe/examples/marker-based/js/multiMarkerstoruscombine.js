@@ -50,10 +50,10 @@ AFRAME.registerComponent('markers_start',{
 					  mtl: '#spiral-mtl'
 					});
 					spiral.object3D.position.set(0, 0, 0);
-					spiral.object3D.scale.set(0.05, 0.05, 0.05);
+					spiral.object3D.scale.set(0.08, 0.08, 0.08);
 					spiral.object3D.rotation.set(0, 0, 0);
 					spiral.emit('rotate');
-					
+
 					spiral.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         	});
@@ -127,7 +127,6 @@ AFRAME.registerComponent('registerevents', {
 
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
-
 				console.log('Marker Found: ', markerId);
 
 			});
