@@ -17,8 +17,8 @@ AFRAME.registerComponent('markers_start',{
 
 		for(var k=0; k<13; k++)
 		{
-			var markerEl = document.createElement('a-marker');
-			// var markerEl = document.createElement('a-marker-camera');
+			// var markerEl = document.createElement('a-marker');
+			var markerEl = document.createElement('a-marker-camera');
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
@@ -42,7 +42,8 @@ AFRAME.registerComponent('markers_start',{
 			textEl.object3D.scale.set(0.05, 0.05, 0.05);
 			textEl.object3D.rotation.set(0, 0, 0);
 
-			markerEl.appendChild(textEl);
+			// markerEl.appendChild(textEl);
+			sceneEl.appendChild(textEl);
 
 // 2
 			textEl1.setAttribute('obj-model', {
@@ -53,7 +54,8 @@ AFRAME.registerComponent('markers_start',{
 			textEl1.object3D.scale.set(0.1, 0.1, 0.1);
 			textEl1.object3D.rotation.set(0, 0, 0);
 
-			markerEl.appendChild(textEl1);
+			sceneEl.appendChild(textEl1);
+			// markerEl.appendChild(textEl1);
 // 3
 
 			textEl2.setAttribute('obj-model', {
@@ -64,12 +66,13 @@ AFRAME.registerComponent('markers_start',{
 			textEl2.object3D.scale.set(0.2, 0.2, 0.2);
 			textEl2.object3D.rotation.set(0, 0, 0);
 
-			markerEl.appendChild(textEl2);
+			sceneEl.appendChild(textEl2);
+			// markerEl.appendChild(textEl2);
 
 
 
 			console.log('Model component registered successfully!');
-			console.log(markerEl);
+			console.log(sceneEl);
 		}
 	}
 });
