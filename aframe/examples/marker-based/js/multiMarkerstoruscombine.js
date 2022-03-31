@@ -51,7 +51,11 @@ AFRAME.registerComponent('markers_start',{
 					textEl.object3D.scale.set(0.05, 0.05, 0.05);
 					textEl.object3D.rotation.set(0, 0, 0);
 
-					markerEl.appendChild(textEl);
+					textEl.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+        });
+
+					sceneEl.appendChild(textEl);
 
 					// 2
 					textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
@@ -63,7 +67,11 @@ AFRAME.registerComponent('markers_start',{
 					textEl1.object3D.scale.set(0.1, 0.1, 0.1);
 					textEl1.object3D.rotation.set(0, 0, 0);
 
-					markerEl.appendChild(textEl1);
+					textEl1.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+        });
+
+					sceneEl.appendChild(textEl1);
 
 					// 3
 					textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
@@ -75,12 +83,16 @@ AFRAME.registerComponent('markers_start',{
 					textEl2.object3D.scale.set(0.2, 0.2, 0.2);
 					textEl2.object3D.rotation.set(0, 0, 0);
 
-					markerEl.appendChild(textEl2);
+					
+					textEl2.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+        });
+					sceneEl.appendChild(textEl2);
 
 
 
 					console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
-					console.log(markerEl);
+					console.log(sceneEl);
 				}
 			});
     }
