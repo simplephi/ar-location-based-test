@@ -7,14 +7,19 @@ var long = '';
 AFRAME.registerComponent('markers_start',{
 	init:function(){
 
-		var sceneEl = document.querySelector('a-scene');
-
 		if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(position) {
+
 						lat = position.coords.latitude;
 						long = position.coords.longitude;
+
+						console.log(position.coords.latitude);
+						console.log(lat);
+
 				});
-			}
+		}
+
+		var sceneEl = document.querySelector('a-scene');
 
 		//list of the markers
 		for(var i=1; i<14; i++)
