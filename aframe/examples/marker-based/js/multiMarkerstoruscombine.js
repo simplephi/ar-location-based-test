@@ -114,7 +114,7 @@ AFRAME.registerComponent('markers_start',{
 					console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					// console.log(sceneEl);
 				}
-			});
+			},{maximumAge:600000, timeout:5000, enableHighAccuracy: false});
     }
 	}
 });
