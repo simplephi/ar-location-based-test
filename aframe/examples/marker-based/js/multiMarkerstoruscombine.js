@@ -20,7 +20,7 @@ AFRAME.registerComponent('markers_start',{
 		if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
 
-				console.log("before: ", position);
+				// console.log("before: ", position);
 
 				for(var k=0; k<13; k++)
 				{
@@ -44,7 +44,7 @@ AFRAME.registerComponent('markers_start',{
 
 					// Spiral
 					// textEl.setAttribute('gltf-model','#monster');
-					spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
+					spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					spiral.setAttribute('obj-model', {
 					  obj: '#spiral-obj',
 					  mtl: '#spiral-mtl'
@@ -63,13 +63,13 @@ AFRAME.registerComponent('markers_start',{
 
 					// Torus 1
 					// textEl.setAttribute('gltf-model','#monster');
-					textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
+					textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					textEl.setAttribute('obj-model', {
 					  obj: '#torus-obj',
 					  mtl: '#gold-mtl'
 					});
 					textEl.object3D.position.set(0, 0, 0);
-					textEl.object3D.scale.set(0.1, 0.1, 0.1);
+					textEl.object3D.scale.set(0.05, 0.05, 0.05);
 					textEl.object3D.rotation.set(0, 0, 0);
 
 					textEl.addEventListener('loaded', () => {
@@ -79,13 +79,13 @@ AFRAME.registerComponent('markers_start',{
 					sceneEl.appendChild(textEl);
 
 					// Torus 2
-					textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
+					textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					textEl1.setAttribute('obj-model', {
 					  obj: '#torus_gold_older-obj',
 					  mtl: '#torus_gold_older-mtl'
 					});
 					textEl1.object3D.position.set(0, 0, 0);
-					textEl1.object3D.scale.set(0.3, 0.3, 0.3);
+					textEl1.object3D.scale.set(0.1, 0.1, 0.1);
 					textEl1.object3D.rotation.set(0, 0, 0);
 
 					textEl1.addEventListener('loaded', () => {
@@ -95,13 +95,13 @@ AFRAME.registerComponent('markers_start',{
 					sceneEl.appendChild(textEl1);
 
 					// Torus 3
-					textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
+					textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					textEl2.setAttribute('obj-model', {
 						obj: '#torus_gold_oldest-obj',
 						mtl: '#torus_gold_oldest-mtl'
 					});
 					textEl2.object3D.position.set(0, 0, 0);
-					textEl2.object3D.scale.set(0.5, 0.5, 0.5);
+					textEl2.object3D.scale.set(0.2, 0.2, 0.2);
 					textEl2.object3D.rotation.set(0, 0, 0);
 
 
@@ -111,7 +111,7 @@ AFRAME.registerComponent('markers_start',{
 					sceneEl.appendChild(textEl2);
 
 
-					console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude - 0.001}; longitude: ${position.coords.longitude +0.001}`);
+					console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 					// console.log(sceneEl);
 				}
 			});
