@@ -45,8 +45,6 @@ AFRAME.registerComponent('registerevents', {
 
 							var sceneElement = document.querySelector('a-scene');
 
-							for(var k=0; k<13; k++)
-							{
 								//Adding element
 								var spiral = document.createElement('a-entity');
 								var textEl = document.createElement('a-entity');
@@ -125,9 +123,9 @@ AFRAME.registerComponent('registerevents', {
 
 
 								console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-								// console.log(sceneEl);
-							}
+								console.log(sceneElement);
 
+								console.log('Cek: ', markerId);
 						});
 					}
 
