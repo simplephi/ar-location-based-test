@@ -69,7 +69,7 @@ AFRAME.registerComponent('markers_start',{
 					  mtl: '#gold-mtl'
 					});
 					textEl.object3D.position.set(0, 0, 0);
-					textEl.object3D.scale.set(0.05, 0.05, 0.05);
+					textEl.object3D.scale.set(0.1, 0.1, 0.1);
 					textEl.object3D.rotation.set(0, 0, 0);
 
 					textEl.addEventListener('loaded', () => {
@@ -85,7 +85,7 @@ AFRAME.registerComponent('markers_start',{
 					  mtl: '#torus_gold_older-mtl'
 					});
 					textEl1.object3D.position.set(0, 0, 0);
-					textEl1.object3D.scale.set(0.1, 0.1, 0.1);
+					textEl1.object3D.scale.set(0.3, 0.3, 0.3);
 					textEl1.object3D.rotation.set(0, 0, 0);
 
 					textEl1.addEventListener('loaded', () => {
@@ -101,7 +101,7 @@ AFRAME.registerComponent('markers_start',{
 						mtl: '#torus_gold_oldest-mtl'
 					});
 					textEl2.object3D.position.set(0, 0, 0);
-					textEl2.object3D.scale.set(0.2, 0.2, 0.2);
+					textEl2.object3D.scale.set(0.5, 0.5, 0.5);
 					textEl2.object3D.rotation.set(0, 0, 0);
 
 
