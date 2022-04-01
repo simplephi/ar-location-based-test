@@ -1,20 +1,19 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
-var lat = '';
-var long = '';
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
-
-		if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(function(position) {
-
-						lat = position.coords.latitude;
-						long = position.coords.longitude;
-
-						console.log("sebelum latitude", position.coords.latitude);
-						console.log("sesudah latitude",lat);
 
 
 						var sceneEl = document.querySelector('a-scene');
@@ -39,11 +38,6 @@ AFRAME.registerComponent('markers_start',{
 							sceneEl.appendChild(markerEl);
 						}
 
-				});
-		}
-
-
-
 	}
 
 });
@@ -57,7 +51,7 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 
-
+						navigator.geolocation.getCurrentPosition(function(position) {
 
 							var sceneElement = document.querySelector('a-scene');
 
@@ -71,8 +65,8 @@ AFRAME.registerComponent('registerevents', {
 
 								// Spiral
 								// textEl.setAttribute('gltf-model','#monster');
-								// spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-								spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+								spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								// spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								spiral.setAttribute('obj-model', {
 								  obj: '#spiral-obj',
 								  mtl: '#spiral-mtl'
@@ -91,7 +85,7 @@ AFRAME.registerComponent('registerevents', {
 
 								// Torus 1
 								// textEl.setAttribute('gltf-model','#monster');
-								textEl.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+								textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl.setAttribute('obj-model', {
 								  obj: '#torus-obj',
 								  mtl: '#gold-mtl'
@@ -107,7 +101,7 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl);
 
 								// Torus 2
-								textEl1.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+								textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl1.setAttribute('obj-model', {
 								  obj: '#torus_gold_older-obj',
 								  mtl: '#torus_gold_older-mtl'
@@ -123,7 +117,7 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl1);
 
 								// Torus 3
-								textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+								textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl2.setAttribute('obj-model', {
 									obj: '#torus_gold_oldest-obj',
 									mtl: '#torus_gold_oldest-mtl'
@@ -139,12 +133,14 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl2);
 
 
-								console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
+								console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								console.log(sceneElement);
 
+						}, error, options);
 
-								console.log('latitude longitude: ', lat," dan ", long);
-								console.log('Marker Found: ', markerId);
+						console.log('Marker Found: ', markerId);
+
+
 
 			});
 
