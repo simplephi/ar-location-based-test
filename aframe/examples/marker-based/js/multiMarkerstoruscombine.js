@@ -1,10 +1,11 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
+var lat = '';
+var long = '';
 
 var options = {
-  enableHighAccuracy: false,
-  timeout: 15000,
+  enableHighAccuracy: true,
   maximumAge: 0
 };
 
@@ -12,8 +13,33 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
+const oldCoords = localStorage.getItem('coords');
+
+if (oldCoords) {
+  showCoords(JSON.parse(oldCoords));
+  lat = JSON.parse(oldCoords.lat);
+  long = JSON.parse(oldCoords.lng);
+
+}
+
 AFRAME.registerComponent('markers_start',{
 	init:function(){
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+        const newCoordinates = JSON.stringify({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        });
+        // console.log('stringified coordinates', newCoordinates);
+        localStorage.setItem('coords', newCoordinates);
+        }, error, options);
+
+      }
+      else {
+      console.log("Geolocation is not supported by this browser.");
+    }
 
 
 						var sceneEl = document.querySelector('a-scene');
@@ -51,7 +77,6 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 
-						navigator.geolocation.getCurrentPosition(function(position) {
 
 							var sceneElement = document.querySelector('a-scene');
 
@@ -65,8 +90,8 @@ AFRAME.registerComponent('registerevents', {
 
 								// Spiral
 								// textEl.setAttribute('gltf-model','#monster');
-								spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-								// spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+								// spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								spiral.setAttribute('obj-model', {
 								  obj: '#spiral-obj',
 								  mtl: '#spiral-mtl'
@@ -85,7 +110,8 @@ AFRAME.registerComponent('registerevents', {
 
 								// Torus 1
 								// textEl.setAttribute('gltf-model','#monster');
-								textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								// textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								textEl.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl.setAttribute('obj-model', {
 								  obj: '#torus-obj',
 								  mtl: '#gold-mtl'
@@ -101,7 +127,8 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl);
 
 								// Torus 2
-								textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								// textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								textEl1.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl1.setAttribute('obj-model', {
 								  obj: '#torus_gold_older-obj',
 								  mtl: '#torus_gold_older-mtl'
@@ -117,7 +144,8 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl1);
 
 								// Torus 3
-								textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								// textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl2.setAttribute('obj-model', {
 									obj: '#torus_gold_oldest-obj',
 									mtl: '#torus_gold_oldest-mtl'
@@ -133,10 +161,11 @@ AFRAME.registerComponent('registerevents', {
 								sceneElement.appendChild(textEl2);
 
 
-								console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								// console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+								console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
 								console.log(sceneElement);
 
-						}, error, options);
+
 
 						console.log('Marker Found: ', markerId);
 
