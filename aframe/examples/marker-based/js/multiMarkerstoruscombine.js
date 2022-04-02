@@ -13,7 +13,7 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-const oldCoords = localStorage.getItem('coords');
+const oldCoords = JSON.parse(localStorage.getItem('coords'));
 
 if (oldCoords) {
   // showCoords(JSON.parse(oldCoords));
