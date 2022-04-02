@@ -3,8 +3,8 @@ var markersURLArray=[];
 var markersNameArray=[];
 
 var options = {
-  enableHighAccuracy: true,
-  timeout: 10000,
+  enableHighAccuracy: false,
+  timeout: 15000,
   maximumAge: 0
 };
 
