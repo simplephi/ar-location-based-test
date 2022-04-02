@@ -17,8 +17,8 @@ const oldCoords = localStorage.getItem('coords');
 
 if (oldCoords) {
   // showCoords(JSON.parse(oldCoords));
-  lat = JSON.parse(oldCoords.lat);
-  long = JSON.parse(oldCoords.lng);
+  lat = oldCoords.lat;
+  long = oldCoords.lng;
 
 }
 
