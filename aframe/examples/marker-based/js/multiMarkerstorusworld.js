@@ -168,10 +168,10 @@ AFRAME.registerComponent('registerevents', {
 						console.log('Marker Found: ', markerId);
 
 
-            var cameraEl = document.querySelector('#camera');
-            var worldPos = new THREE.Vector3();
-            worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
-            console.log(worldPos.x);
+            // var cameraEl = document.querySelector('#camera');
+            // var worldPos = new THREE.Vector3();
+            // worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+            // console.log(worldPos.x);
 
 
 
