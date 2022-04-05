@@ -1,46 +1,10 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
-var lat = '';
-var long = '';
 
-var options = {
-  enableHighAccuracy: true,
-  maximumAge: 0
-};
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-}
-
-const oldCoords = JSON.parse(localStorage.getItem('coords'));
-
-if (oldCoords) {
-  // showCoords(JSON.parse(oldCoords));
-  lat = oldCoords.lat;
-  long = oldCoords.lng;
-
-}
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-
-        const newCoordinates = JSON.stringify({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        });
-        // console.log('stringified coordinates', newCoordinates);
-        localStorage.setItem('coords', newCoordinates);
-
-        }, error, options);
-
-      }
-      else {
-        console.log("Geolocation is not supported by this browser.");
-      }
 
 
 						var sceneEl = document.querySelector('a-scene');
@@ -169,6 +133,12 @@ AFRAME.registerComponent('registerevents', {
 
 
 						console.log('Marker Found: ', markerId);
+
+
+            var cameraEl = document.querySelector('#camera');
+            var worldPos = new THREE.Vector3();
+            worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+            console.log(worldPos.x);
 
 
 
