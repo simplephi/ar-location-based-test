@@ -57,7 +57,7 @@ AFRAME.registerComponent('markers_start',{
 							mtl: '#spiral-mtl'
 						});
 						spiral.object3D.position.set(0, 0, 0);
-						spiral.object3D.scale.set(0.08, 0.08, 0.08);
+						spiral.object3D.scale.set(0.1, 0.1, 0.1);
 						spiral.object3D.rotation.set(0, 0, 0);
 						spiral.emit('rotate');
 
@@ -73,15 +73,15 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus1.object3D.position.set(0, 0, 0);
-						torus1.object3D.scale.set(0.05, 0.05, 0.05);
+						torus1.object3D.position.set(0, 0, 1);
+						torus1.object3D.scale.set(0.1, 0.1, 0.1);
 						torus1.object3D.rotation.set(0, 0, 0);
 
 						sphere1.setAttribute('obj-model', {
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere1.object3D.position.set(0, 0, 0);
+						sphere1.object3D.position.set(0, 0, 1);
 						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere1.object3D.rotation.set(0, 0, 0);
 
@@ -98,15 +98,15 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus2.object3D.position.set(0, 0, 0);
-						torus2.object3D.scale.set(0.05, 0.05, 0.05);
+						torus2.object3D.position.set(0, 0, 2);
+						torus2.object3D.scale.set(0.2, 0.2, 0.2);
 						torus2.object3D.rotation.set(0, 0, 0);
 
 						sphere2.setAttribute('obj-model', {
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere2.object3D.position.set(0, 0, 0);
+						sphere2.object3D.position.set(0, 0, 2);
 						sphere2.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere2.object3D.rotation.set(0, 0, 0);
 
@@ -124,15 +124,15 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus3.object3D.position.set(0, 0, 0);
-						torus3.object3D.scale.set(0.05, 0.05, 0.05);
+						torus3.object3D.position.set(0, 0, 3);
+						torus3.object3D.scale.set(0.3, 0.3, 0.3);
 						torus3.object3D.rotation.set(0, 0, 0);
 
 						sphere3.setAttribute('obj-model', {
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere3.object3D.position.set(0, 0, 0);
+						sphere3.object3D.position.set(0, 0, 3);
 						sphere3.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere3.object3D.rotation.set(0, 0, 0);
 
@@ -195,7 +195,7 @@ AFRAME.registerComponent('registerevents', {
 	    cameraEl.getAttribute('rotation');
 
 			console.log(cameraEl.getAttribute('position'));
-			console.log(cameraEl.getAttribute('rotation'));
+			// console.log(cameraEl.getAttribute('rotation'));
 	    // Do something.
 	  }
 	});
