@@ -194,6 +194,8 @@ AFRAME.registerComponent('registerevents', {
 	    cameraEl.getAttribute('position');
 	    cameraEl.getAttribute('rotation');
 
+			console.log(cameraEl.getAttribute('position');
+			console.log(cameraEl.getAttribute('rotation');
 	    // Do something.
 	  }
 	});
