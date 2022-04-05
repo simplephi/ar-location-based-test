@@ -144,7 +144,7 @@ AFRAME.registerComponent('markers_start',{
 
 						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
 						console.log('Model component registered successfully!' );
-						// console.log(markerEl);
+						console.log(markerEl);
 				}
 						// console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 
@@ -171,13 +171,13 @@ AFRAME.registerComponent('registerevents', {
             worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
             console.log("yang world pos: ", worldPos.x);
 
-						tick: function () {
-					    var cameraEl = this.el.sceneEl.camera.el;
-					    console.log("yang tick", cameraEl.getAttribute('position'));
-					    console.log("yang tick" , cameraEl.getAttribute('rotation'));
-
-					    // Do something.
-					  }
+						// tick: function () {
+					  //   var cameraEl = this.el.sceneEl.camera.el;
+					  //   console.log("yang tick", cameraEl.getAttribute('position'));
+					  //   console.log("yang tick" , cameraEl.getAttribute('rotation'));
+						//
+					  //   // Do something.
+					  // }
 
 			});
 
