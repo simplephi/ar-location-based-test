@@ -127,7 +127,8 @@ AFRAME.registerComponent('markers_start',{
 						markerEl.appendChild(textEl2);
 
 
-						console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
+						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
+						console.log('Model component registered successfully!' );
 						console.log(markerEl);
 				}
 						// console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
