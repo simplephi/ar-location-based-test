@@ -153,6 +153,8 @@ AFRAME.registerComponent('rotation-reader', {
       this.el.object3D.getWorldPosition(position);
       this.el.object3D.getWorldQuaternion(quaternion);
       // position and rotation now contain vector and quaternion in world space.
+			console.log(this.el.object3D.getWorldPosition(position));
+			console.log(this.el.object3D.getWorldQuaternion(quaternion));
     };
   })()
 });
