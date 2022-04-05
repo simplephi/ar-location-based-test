@@ -73,7 +73,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus1.object3D.position.set(0, 0, 1);
+						torus1.object3D.position.set(1, 0, 0);
 						torus1.object3D.scale.set(0.1, 0.1, 0.1);
 						torus1.object3D.rotation.set(0, 0, 0);
 
@@ -81,7 +81,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere1.object3D.position.set(0, 0, 1);
+						sphere1.object3D.position.set(1, 0, 0);
 						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere1.object3D.rotation.set(0, 0, 0);
 
@@ -98,7 +98,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus2.object3D.position.set(0, 0, 2);
+						torus2.object3D.position.set(1.3, 0, 0);
 						torus2.object3D.scale.set(0.2, 0.2, 0.2);
 						torus2.object3D.rotation.set(0, 0, 0);
 
@@ -106,7 +106,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere2.object3D.position.set(0, 0, 2);
+						sphere2.object3D.position.set(1.3, 0, 0);
 						sphere2.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere2.object3D.rotation.set(0, 0, 0);
 
@@ -124,7 +124,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus3.object3D.position.set(0, 0, 3);
+						torus3.object3D.position.set(1.6, 0, 0);
 						torus3.object3D.scale.set(0.3, 0.3, 0.3);
 						torus3.object3D.rotation.set(0, 0, 0);
 
@@ -132,7 +132,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere3.object3D.position.set(0, 0, 3);
+						sphere3.object3D.position.set(1.6, 0, 0);
 						sphere3.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere3.object3D.rotation.set(0, 0, 0);
 
@@ -188,14 +188,20 @@ AFRAME.registerComponent('registerevents', {
 		},
 	});
 
-	AFRAME.registerComponent('camera-listener', {
-	  tick: function () {
-	    var cameraEl = this.el.sceneEl.camera.el;
-	    cameraEl.getAttribute('position');
-	    cameraEl.getAttribute('rotation');
+	AFRAME.registerComponent('rotation-reader', {
+	  /**
+	   * We use IIFE (immediately-invoked function expression) to only allocate one
+	   * vector or euler and not re-create on every tick to save memory.
+	   */
+	  tick: (function () {
+	    var position = new THREE.Vector3();
+	    var quaternion = new THREE.Quaternion();
 
-			console.log(cameraEl.getAttribute('position'));
-			// console.log(cameraEl.getAttribute('rotation'));
-	    // Do something.
-	  }
+	    return function () {
+	      var hasil = this.el.object3D.getWorldPosition(position);
+				console.log(hasil);
+	      // this.el.object3D.getWorldQuaternion(quaternion);
+	      // position and rotation now contain vector and quaternion in world space.
+	    };
+	  })()
 	});

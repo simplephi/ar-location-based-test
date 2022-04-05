@@ -14,7 +14,7 @@
 		<!-- <a-scene embedded arjs renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;"> -->
 		<a-scene markers_start renderer="precision: mediump; colorManagement: true; physicallyCorrectLights: true;"  vr-mode-ui="enabled: false" color-space="sRGB" embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
 
-				<a-entity light="type: ambient;  intensity: 3"></a-entity>
+				<!-- <a-entity light="type: ambient;  intensity: 3"></a-entity> -->
 
 
 					<!-- SPIRAL -->
@@ -65,7 +65,7 @@
 				<!-- <a-entity camera look-controls rotation-reader>
 					<a-cursor> </a-cursor>
 				</a-entity> -->
-				<a-entity camera look-controls camera-listener>
+				<a-entity camera look-controls rotation-reader>
 					<a-cursor> </a-cursor>
 				</a-entity>
 				<!-- <a-camera id="camera">
