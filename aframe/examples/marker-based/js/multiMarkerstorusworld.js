@@ -111,9 +111,9 @@ AFRAME.registerComponent('markers_start',{
 						sphere2.object3D.rotation.set(0, 0, 0);
 
 
-						torus2_parent.appendChild(torus2);
-						torus2_parent.appendChild(sphere2);
-						markerEl.appendChild(torus2_parent);
+						markerEl.appendChild(torus2);
+						markerEl.appendChild(sphere2);
+						// markerEl.appendChild(torus2_parent);
 
 
 
@@ -137,9 +137,9 @@ AFRAME.registerComponent('markers_start',{
 						sphere3.object3D.rotation.set(0, 0, 0);
 
 
-						torus3_parent.appendChild(torus3);
-						torus3_parent.appendChild(sphere3);
-						markerEl.appendChild(torus3_parent);
+						markerEl.appendChild(torus3);
+						markerEl.appendChild(sphere3);
+						// markerEl.appendChild(torus3_parent);
 
 
 						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
@@ -187,3 +187,36 @@ AFRAME.registerComponent('registerevents', {
 			});
 		},
 	});
+
+	
+
+	AFRAME.registerComponent('camera-logger', {
+
+  schema: {
+    timestamp: {type: 'int'},
+    seconds: {type: 'int'} // default 0
+  },
+
+  log : function () {
+    var cameraEl = this.el.sceneEl.camera.el;
+    var rotation = cameraEl.getAttribute('rotation');
+    var worldPos = new THREE.Vector3();
+    worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+    console.log("Time: " + this.data.seconds
+                + "; Camera Position: (" + worldPos.x.toFixed(2) + ", " + worldPos.y.toFixed(2) + ", " + worldPos.z.toFixed(2)
+                + "); Camera Rotation: (" + rotation.x.toFixed(2) + ", " + rotation.y.toFixed(2) + ", " + rotation.z.toFixed(2) + ")");
+  },
+
+  play: function () {
+    this.data.timestamp = Date.now();
+    this.log();
+  },
+
+  tick: function () {
+    if (Date.now() - this.data.timestamp > 1000) {
+      this.data.timestamp += 1000;
+      this.data.seconds += 1;
+      this.log();
+    }
+  },
+});
