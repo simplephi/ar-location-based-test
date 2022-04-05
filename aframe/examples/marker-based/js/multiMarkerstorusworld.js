@@ -188,20 +188,12 @@ AFRAME.registerComponent('registerevents', {
 		},
 	});
 
-	AFRAME.registerComponent('rotation-reader', {
-	  /**
-	   * We use IIFE (immediately-invoked function expression) to only allocate one
-	   * vector or euler and not re-create on every tick to save memory.
-	   */
-	  tick: (function () {
-	    var position = new THREE.Vector3();
-	    var quaternion = new THREE.Quaternion();
+AFRAME.registerComponent('camera-listener', {
+  tick: function () {
+    var cameraEl = this.el.sceneEl.camera.el;
+    console.log("yang posisi ", cameraEl.getAttribute('position'));
+    console.log("yang rotasi ", cameraEl.getAttribute('rotation'));
 
-	    return function () {
-	      var hasil = this.el.object3D.getWorldPosition(position);
-				console.log(hasil);
-	      // this.el.object3D.getWorldQuaternion(quaternion);
-	      // position and rotation now contain vector and quaternion in world space.
-	    };
-	  })()
-	});
+    // Do something.
+  }
+});
