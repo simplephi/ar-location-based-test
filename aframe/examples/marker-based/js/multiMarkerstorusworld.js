@@ -78,9 +78,14 @@ AFRAME.registerComponent('registerevents', {
 								// textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl.setAttribute('obj-model', {
-								  obj: '#torus-obj',
-								  mtl: '#gold-mtl'
+								  obj: '#torus_gold_oldest-obj',
+								  mtl: '#torus_gold_oldest-mtl'
 								});
+								textEl.setAttribute('obj-model', {
+								  obj: '#sphere_gold_oldest-obj',
+								  mtl: '#sphere_gold_oldest-mtl'
+								});
+
 								textEl.object3D.position.set(0, 0, 0);
 								textEl.object3D.scale.set(0.05, 0.05, 0.05);
 								textEl.object3D.rotation.set(0, 0, 0);
@@ -91,12 +96,17 @@ AFRAME.registerComponent('registerevents', {
 
 								sceneElement.appendChild(textEl);
 
+
 								// Torus 2
 								// textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl1.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl1.setAttribute('obj-model', {
-								  obj: '#torus_gold_older-obj',
-								  mtl: '#torus_gold_older-mtl'
+								  obj: '#torus-obj',
+								  mtl: '#gold-mtl'
+								});
+								textEl1.setAttribute('obj-model', {
+								  obj: '#sphere_gold-obj',
+								  mtl: '#sphere_gold-mtl'
 								});
 								textEl1.object3D.position.set(0, 0, 0);
 								textEl1.object3D.scale.set(0.1, 0.1, 0.1);
@@ -108,12 +118,18 @@ AFRAME.registerComponent('registerevents', {
 
 								sceneElement.appendChild(textEl1);
 
+
+
 								// Torus 3
 								// textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 								textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
 								textEl2.setAttribute('obj-model', {
-									obj: '#torus_gold_oldest-obj',
-									mtl: '#torus_gold_oldest-mtl'
+									obj: '#torus_gold_older-obj',
+									mtl: '#torus_gold_older-mtl'
+								});
+								textEl2.setAttribute('obj-model', {
+									obj: '#sphere_gold_older-obj',
+									mtl: '#sphere_gold_older-mtl'
 								});
 								textEl2.object3D.position.set(0, 0, 0);
 								textEl2.object3D.scale.set(0.2, 0.2, 0.2);
