@@ -86,9 +86,9 @@ AFRAME.registerComponent('markers_start',{
 						sphere1.object3D.rotation.set(0, 0, 0);
 
 
-						torus1_parent.appendChild(torus1);
-						torus1_parent.appendChild(sphere1);
-						markerEl.appendChild(torus1_parent);
+						markerEl.appendChild(torus1);
+						markerEl.appendChild(sphere1);
+						// markerEl.appendChild(torus1_parent);
 
 
 						// Torus 2
@@ -166,10 +166,10 @@ AFRAME.registerComponent('registerevents', {
 						console.log('Marker Found: ', markerId);
 
 
-            var cameraEl = document.querySelector('#camera');
-            var worldPos = new THREE.Vector3();
-            worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
-            console.log("yang world pos: ", worldPos.x);
+            // var cameraEl = document.querySelector('#camera');
+            // var worldPos = new THREE.Vector3();
+            // worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+            // console.log("yang world pos: ", worldPos.x);
 
 						// tick: function () {
 					  //   var cameraEl = this.el.sceneEl.camera.el;
@@ -188,35 +188,12 @@ AFRAME.registerComponent('registerevents', {
 		},
 	});
 
-	
+	AFRAME.registerComponent('camera-listener', {
+	  tick: function () {
+	    var cameraEl = this.el.sceneEl.camera.el;
+	    cameraEl.getAttribute('position');
+	    cameraEl.getAttribute('rotation');
 
-	AFRAME.registerComponent('camera-logger', {
-
-  schema: {
-    timestamp: {type: 'int'},
-    seconds: {type: 'int'} // default 0
-  },
-
-  log : function () {
-    var cameraEl = this.el.sceneEl.camera.el;
-    var rotation = cameraEl.getAttribute('rotation');
-    var worldPos = new THREE.Vector3();
-    worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
-    console.log("Time: " + this.data.seconds
-                + "; Camera Position: (" + worldPos.x.toFixed(2) + ", " + worldPos.y.toFixed(2) + ", " + worldPos.z.toFixed(2)
-                + "); Camera Rotation: (" + rotation.x.toFixed(2) + ", " + rotation.y.toFixed(2) + ", " + rotation.z.toFixed(2) + ")");
-  },
-
-  play: function () {
-    this.data.timestamp = Date.now();
-    this.log();
-  },
-
-  tick: function () {
-    if (Date.now() - this.data.timestamp > 1000) {
-      this.data.timestamp += 1000;
-      this.data.seconds += 1;
-      this.log();
-    }
-  },
-});
+	    // Do something.
+	  }
+	});
