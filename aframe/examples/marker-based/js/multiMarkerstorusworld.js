@@ -148,15 +148,15 @@ AFRAME.registerComponent('markers_start',{
 						console.log(markerEl);
 				}
 
-				var cameraEl = document.querySelector('#camera');
-				var worldPos = new THREE.Vector3();
-				worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
-				console.log("world pos: ", worldPos.x);
-
-				cameraEl.addEventListener('componentchanged', function (evt) {
-				  if (evt.detail.name !== 'position') { return; }
-				  console.log("componentchanged : ", evt.detail.newData);
-				});
+				// var cameraEl = document.querySelector('#camera');
+				// var worldPos = new THREE.Vector3();
+				// worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+				// console.log("world pos: ", worldPos.x);
+				//
+				// cameraEl.addEventListener('componentchanged', function (evt) {
+				//   if (evt.detail.name !== 'position') { return; }
+				//   console.log("componentchanged : ", evt.detail.newData);
+				// });
 						// console.log('Model component registered successfully!' , ` latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 
 
