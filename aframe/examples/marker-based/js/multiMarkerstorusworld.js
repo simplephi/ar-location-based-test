@@ -219,8 +219,10 @@ AFRAME.registerComponent('rotation-reader', {
     var quaternion = new THREE.Quaternion();
 
     return function () {
-      var position = this.el.object3D.getWorldPosition(position);
+      // var position = this.el.object3D.getWorldPosition(position);
       var rotation = this.el.object3D.getWorldQuaternion(quaternion);
+			position.setFromMatrixPosition(this.el.object3D.matrixWorld);
+			console.log(position.x);
 			console.log("Position: ", position);
 			console.log("rotation: ", rotation);
       // position and rotation now contain vector and quaternion in world space.
