@@ -221,7 +221,7 @@ AFRAME.registerComponent('rotation-reader', {
     return function () {
       var tes_position = this.el.object3D.getWorldPosition(position);
       var rotation = this.el.object3D.getWorldQuaternion(quaternion);
-			position.setFromMatrixPosition(this.el.object3D.matrixWorld);
+			// position.setFromMatrixPosition(this.el.object3D.matrixWorld);
 			console.log("Position from setFromMatrixPosition: " + position.x + " " + position.y + " " + position.z);
 			console.log("Position from getWorldPosition: ", tes_position);
 			console.log("rotation: ", rotation);
