@@ -251,9 +251,12 @@ AFRAME.registerComponent('registerevents', {
 						});
 
 
-						sceneElement.appendChild(torus1);
-						sceneElement.appendChild(sphere1);
-						// markerEl.appendChild(torus1_parent);
+						// sceneElement.appendChild(torus1);
+						// sceneElement.appendChild(sphere1);
+						// sceneElement.appendChild(torus1_parent);
+						torus1_parent.appendChild(torus1);
+						torus1_parent.appendChild(sphere1);
+						sceneElement.appendChild(torus1_parent);
 
 
 						// Torus 2
@@ -276,9 +279,12 @@ AFRAME.registerComponent('registerevents', {
 						sphere2.object3D.rotation.set(0, 0, 0);
 
 
-						sceneElement.appendChild(torus2);
-						sceneElement.appendChild(sphere2);
-						// markerEl.appendChild(torus2_parent);
+						// sceneElement.appendChild(torus2);
+						// sceneElement.appendChild(sphere2);
+						// sceneElement.appendChild(torus2_parent);
+						torus2_parent.appendChild(torus2);
+						torus2_parent.appendChild(sphere2);
+						sceneElement.appendChild(torus2_parent);
 
 
 
@@ -302,9 +308,9 @@ AFRAME.registerComponent('registerevents', {
 						sphere3.object3D.rotation.set(0, 0, 0);
 
 
-						sceneElement.appendChild(torus3);
-						sceneElement.appendChild(sphere3);
-						// markerEl.appendChild(torus3_parent);
+						torus3_parent.appendChild(torus3);
+						torus3_parent.appendChild(sphere3);
+						sceneElement.appendChild(torus3_parent);
 
 
 						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
