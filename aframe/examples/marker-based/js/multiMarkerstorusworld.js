@@ -78,6 +78,7 @@ AFRAME.registerComponent('markers_start',{
 						torus1.object3D.scale.set(0.1, 0.1, 0.1);
 						torus1.object3D.rotation.set(0, 0, 0);
 
+
 						sphere1.setAttribute('obj-model', {
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
@@ -85,6 +86,13 @@ AFRAME.registerComponent('markers_start',{
 						sphere1.object3D.position.set(1, 0, 0);
 						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
 						sphere1.object3D.rotation.set(0, 0, 0);
+
+						sphere1.setAttribute('animation', {
+						  property: 'rotation',
+						  to: '0 360 0',
+						  loop: true,
+							dur: 2000
+						});
 
 
 						markerEl.appendChild(torus1);
