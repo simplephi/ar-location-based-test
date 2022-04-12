@@ -83,10 +83,10 @@ AFRAME.registerComponent('markers_start',{
 							mtl: '#sphere_gold_oldest-mtl'
 						});
 						sphere1.setAttribute('animation', {
-						  property: 'rotation',
-						  to: 0 360 0,
-						  loop: true,
-							dur: 2000
+						  'property': 'rotation',
+						  'to': '0 360 0',
+						  'loop': true,
+							'dur': 2000
 						});
 
 						sphere1.object3D.position.set(1, 0, 0);
