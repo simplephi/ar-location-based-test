@@ -84,7 +84,7 @@ AFRAME.registerComponent('markers_start',{
 						});
 						sphere1.setAttribute('animation', {
 						  property: 'rotation',
-						  to: '0 360 0',
+						  to: 0 360 0,
 						  loop: true,
 							dur: 2000
 						});
