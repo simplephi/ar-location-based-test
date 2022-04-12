@@ -27,11 +27,10 @@ AFRAME.registerComponent('markers_start',{
 							markerEl.setAttribute('id',markersNameArray[k]);
 
 
-							markerEl.setAttribute('class','world');
-							markerEl.setAttribute('zappar-instant', {
-														'placement-mode': true
-
-													});
+							// markerEl.setAttribute('class','world');
+							// markerEl.setAttribute('zappar-instant', {
+							// 	'placement-mode': true
+							// });
 
 							markerEl.setAttribute('registerevents','');
 							sceneEl.appendChild(markerEl);
@@ -257,8 +256,8 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 
-				let myInstantTracker = document.getElementsByClassName("world");
-				myInstantTracker.setAttribute("zappar-instant", "placement-mode: false;");
+				// let myInstantTracker = document.getElementsByClassName("world");
+				// myInstantTracker.setAttribute("zappar-instant", "placement-mode: false;");
 
 				console.log('Marker Found: ', markerId);
 
