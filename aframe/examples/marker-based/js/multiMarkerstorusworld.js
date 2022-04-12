@@ -82,16 +82,18 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#sphere_gold_oldest-obj',
 							mtl: '#sphere_gold_oldest-mtl'
 						});
-						sphere1.object3D.position.set(1, 0, 0);
-						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
-						sphere1.object3D.rotation.set(0, 0, 0);
-
 						sphere1.setAttribute('animation', {
 						  property: 'rotation',
 						  to: '0 360 0',
 						  loop: true,
 							dur: 2000
 						});
+
+						sphere1.object3D.position.set(1, 0, 0);
+						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
+						sphere1.object3D.rotation.set(0, 0, 0);
+
+
 
 
 						torus1_parent.appendChild(torus1);
@@ -219,10 +221,10 @@ AFRAME.registerComponent('rotation-reader', {
     return function () {
       var tes_position = this.el.object3D.getWorldPosition(position);
       var rotation = this.el.object3D.getWorldQuaternion(quaternion);
-			position.setFromMatrixPosition(this.el.object3D.matrixWorld);
+			// position.setFromMatrixPosition(this.el.object3D.matrixWorld);
 			// console.log("Position from setFromMatrixPosition: " + position.x + " " + position.y + " " + position.z);
 			// console.log("Position from getWorldPosition: ", tes_position);
-			console.log("Position from getWorldPosition: ", position.setFromMatrixPosition(this.el.object3D.matrixWorld));
+			// console.log("Position from getWorldPosition: ", position.setFromMatrixPosition(this.el.object3D.matrixWorld));
 			// console.log("rotation: ", rotation);
       // position and rotation now contain vector and quaternion in world space.
     };
