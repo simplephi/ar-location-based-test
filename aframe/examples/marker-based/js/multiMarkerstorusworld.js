@@ -104,52 +104,54 @@ AFRAME.registerComponent('markers_start',{
 						// Torus 2
 						// textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 						// textEl1.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						torus2.setAttribute('obj-model', {
-							obj: '#torus_gold_oldest-obj',
-							mtl: '#torus_gold_oldest-mtl'
-						});
-						torus2.object3D.position.set(1.3, 0, 0);
-						torus2.object3D.scale.set(0.2, 0.2, 0.2);
-						torus2.object3D.rotation.set(0, 0, 0);
 
-						sphere2.setAttribute('obj-model', {
-							obj: '#sphere_gold_oldest-obj',
-							mtl: '#sphere_gold_oldest-mtl'
-						});
-						sphere2.object3D.position.set(1.3, 0, 0);
-						sphere2.object3D.scale.set(0.05, 0.05, 0.05);
-						sphere2.object3D.rotation.set(0, 0, 0);
-
-
-						torus2_parent.appendChild(torus2);
-						torus2_parent.appendChild(sphere2);
-						markerEl.appendChild(torus2_parent);
-
-
-
-						// Torus 3
-						// textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-						// textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						torus3.setAttribute('obj-model', {
-							obj: '#torus_gold_oldest-obj',
-							mtl: '#torus_gold_oldest-mtl'
-						});
-						torus3.object3D.position.set(1.6, 0, 0);
-						torus3.object3D.scale.set(0.3, 0.3, 0.3);
-						torus3.object3D.rotation.set(0, 0, 0);
-
-						sphere3.setAttribute('obj-model', {
-							obj: '#sphere_gold_oldest-obj',
-							mtl: '#sphere_gold_oldest-mtl'
-						});
-						sphere3.object3D.position.set(1.6, 0, 0);
-						sphere3.object3D.scale.set(0.05, 0.05, 0.05);
-						sphere3.object3D.rotation.set(0, 0, 0);
-
-
-						torus3_parent.appendChild(torus3);
-						torus3_parent.appendChild(sphere3);
-						markerEl.appendChild(torus3_parent);
+						// torus2.setAttribute('obj-model', {
+						// 	obj: '#torus_gold_oldest-obj',
+						// 	mtl: '#torus_gold_oldest-mtl'
+						// });
+						// torus2.object3D.position.set(1.3, 0, 0);
+						// torus2.object3D.scale.set(0.2, 0.2, 0.2);
+						// torus2.object3D.rotation.set(0, 0, 0);
+						//
+						// sphere2.setAttribute('obj-model', {
+						// 	obj: '#sphere_gold_oldest-obj',
+						// 	mtl: '#sphere_gold_oldest-mtl'
+						// });
+						// sphere2.object3D.position.set(1.3, 0, 0);
+						// sphere2.object3D.scale.set(0.05, 0.05, 0.05);
+						// sphere2.object3D.rotation.set(0, 0, 0);
+						//
+						//
+						// torus2_parent.appendChild(torus2);
+						// torus2_parent.appendChild(sphere2);
+						// markerEl.appendChild(torus2_parent);
+						//
+						//
+						//
+						// // Torus 3
+						// // textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+						// // textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+						//
+						// torus3.setAttribute('obj-model', {
+						// 	obj: '#torus_gold_oldest-obj',
+						// 	mtl: '#torus_gold_oldest-mtl'
+						// });
+						// torus3.object3D.position.set(1.6, 0, 0);
+						// torus3.object3D.scale.set(0.3, 0.3, 0.3);
+						// torus3.object3D.rotation.set(0, 0, 0);
+						//
+						// sphere3.setAttribute('obj-model', {
+						// 	obj: '#sphere_gold_oldest-obj',
+						// 	mtl: '#sphere_gold_oldest-mtl'
+						// });
+						// sphere3.object3D.position.set(1.6, 0, 0);
+						// sphere3.object3D.scale.set(0.05, 0.05, 0.05);
+						// sphere3.object3D.rotation.set(0, 0, 0);
+						//
+						//
+						// torus3_parent.appendChild(torus3);
+						// torus3_parent.appendChild(sphere3);
+						// markerEl.appendChild(torus3_parent);
 
 
 						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
