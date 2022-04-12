@@ -73,7 +73,7 @@ AFRAME.registerComponent('markers_start',{
 							obj: '#torus_gold_oldest-obj',
 							mtl: '#torus_gold_oldest-mtl'
 						});
-						torus1.object3D.position.set(1, 0, 0);
+						torus1.object3D.position.set(0, 0, 0);
 						torus1.object3D.scale.set(0.1, 0.1, 0.1);
 						torus1.object3D.rotation.set(0, 0, 0);
 
@@ -89,8 +89,8 @@ AFRAME.registerComponent('markers_start',{
 							'dur': 2000
 						});
 
-						sphere1.object3D.position.set(1, 0, 0);
-						sphere1.object3D.scale.set(0.05, 0.05, 0.05);
+						sphere1.object3D.position.set(-3, 0, 0);
+						sphere1.object3D.scale.set(0.1, 0.1, 0.1);
 						sphere1.object3D.rotation.set(0, 0, 0);
 
 
