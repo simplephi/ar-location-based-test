@@ -80,7 +80,8 @@ AFRAME.registerComponent('markers_start',{
 
 						sphere1.setAttribute('obj-model', {
 							obj: '#sphere_gold_oldest-obj',
-							mtl: '#sphere_gold_oldest-mtl'
+							mtl: '#sphere_gold_oldest-mtl',
+							position: '3 1 0'
 						});
 						sphere1.setAttribute('animation', {
 						  'property': 'rotation',
