@@ -123,7 +123,7 @@ AFRAME.registerComponent('markers_start',{
 													  'property': 'rotation',
 													  'to': '0 360 0',
 													  'loop': true,
-														'dur': 4000
+														'dur': 3600000
 													});
 							animation_sphere_gold.object3D.position.set(-1, 0, -6);
 
@@ -179,7 +179,7 @@ AFRAME.registerComponent('markers_start',{
 							              'property': 'rotation',
 							              'to': '0 360 0',
 							              'loop': true,
-							              'dur': 6000
+							              'dur': 86400000
 							            });
 							animation_sphere_gold_older.object3D.position.set(-1, 0, -6);
 
