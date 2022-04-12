@@ -38,13 +38,13 @@ AFRAME.registerComponent('markers_start',{
 						var torus1 = document.createElement('a-entity');
 						var sphere1 = document.createElement('a-entity');
 
-						var torus2_parent = document.createElement('a-entity');
-						var torus2 = document.createElement('a-entity');
-						var sphere2 = document.createElement('a-entity');
-
-						var torus3_parent = document.createElement('a-entity');
-						var torus3 = document.createElement('a-entity');
-						var sphere3 = document.createElement('a-entity');
+						// var torus2_parent = document.createElement('a-entity');
+						// var torus2 = document.createElement('a-entity');
+						// var sphere2 = document.createElement('a-entity');
+						//
+						// var torus3_parent = document.createElement('a-entity');
+						// var torus3 = document.createElement('a-entity');
+						// var sphere3 = document.createElement('a-entity');
 
 						// OBJ model
 
@@ -186,9 +186,6 @@ AFRAME.registerComponent('registerevents', {
 
 
 						console.log('Marker Found: ', markerId);
-
-
-
 
 
 			});
