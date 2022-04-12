@@ -26,133 +26,205 @@ AFRAME.registerComponent('markers_start',{
 							markerEl.setAttribute('url',markersURLArray[k]);
 							markerEl.setAttribute('id',markersNameArray[k]);
 
+
+							markerEl.setAttribute('class','world');
+							markerEl.setAttribute('zappar-instant', {
+														'placement-mode': true
+
+													});
+
 							markerEl.setAttribute('registerevents','');
 							sceneEl.appendChild(markerEl);
 
 
 
-						//Adding element
-						var spiral = document.createElement('a-entity');
+							// var body = document.querySelector('a-scene');
 
-						var torus1_parent = document.createElement('a-entity');
-						var torus1 = document.createElement('a-entity');
-						var sphere1 = document.createElement('a-entity');
+							var spiral = document.createElement('a-entity');
+							spiral.setAttribute('obj-model', {
+														obj: '#spiral-obj',
+														mtl: '#spiral-mtl'
+													});
+							spiral.object3D.position.set(0, 0.5, 0);
+							spiral.object3D.scale.set(0.2, 0.2, 0.2);
+							spiral.object3D.rotation.set(0, 0, 0);
 
-						// var torus2_parent = document.createElement('a-entity');
-						// var torus2 = document.createElement('a-entity');
-						// var sphere2 = document.createElement('a-entity');
-						//
-						// var torus3_parent = document.createElement('a-entity');
-						// var torus3 = document.createElement('a-entity');
-						// var sphere3 = document.createElement('a-entity');
+							spiral.setAttribute('animation', {
+							              'property': 'rotation',
+							              'to': '0 360 0',
+							              'loop': true,
+							              'dur': 5000,
+							              'dir': "alternate"
+							            });
 
-						// OBJ model
+							markerEl.appendChild(spiral);
 
-						// Spiral
-						// textEl.setAttribute('gltf-model','#monster');
-						// spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-						// spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						spiral.setAttribute('obj-model', {
-							obj: '#spiral-obj',
-							mtl: '#spiral-mtl'
-						});
-						spiral.object3D.position.set(0, 0, 0);
-						spiral.object3D.scale.set(0.1, 0.1, 0.1);
-						spiral.object3D.rotation.set(0, 0, 0);
-						spiral.emit('rotate');
+							//////////////////////////
+							var animation_sphere_gold_oldest = document.createElement('a-entity');
+							var torus1 = document.createElement('a-entity');
+							var sphere1 = document.createElement('a-entity');
 
-						markerEl.appendChild(spiral);
+							animation_sphere_gold_oldest.setAttribute('animation', {
+							              'property': 'rotation',
+							              'to': '0 360 0',
+							              'loop': true,
+							              'dur': 60000
+							            });
+							animation_sphere_gold_oldest.object3D.position.set(-1, 0, -6);
 
+							sphere1.setAttribute('obj-model', {
+							              obj: '#sphere_gold_oldest-obj',
+							              mtl: '#sphere_gold_oldest-mtl',
 
-						// Torus 1
-						// textEl.setAttribute('gltf-model','#monster');
-						// textEl.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-						// textEl.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+							            });
 
-						torus1.setAttribute('obj-model', {
-							obj: '#torus_gold_oldest-obj',
-							mtl: '#torus_gold_oldest-mtl'
-						});
-						torus1.object3D.position.set(0, 0, 0);
-						torus1.object3D.scale.set(0.1, 0.1, 0.1);
-						torus1.object3D.rotation.set(0, 0, 0);
+							sphere1.object3D.position.set(3, 0, 0);
+							sphere1.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '3 0 0',
+							              'to': '3 1 0',
+							              'loop': true,
+							              'dur': 3000,
+							              'dir': "alternate"
+							            });
 
-
-						sphere1.setAttribute('obj-model', {
-							obj: '#sphere_gold_oldest-obj',
-							mtl: '#sphere_gold_oldest-mtl',
-							position: '3 1 0'
-						});
-						sphere1.setAttribute('animation', {
-						  'property': 'rotation',
-						  'to': '0 360 0',
-						  'loop': true,
-							'dur': 2000
-						});
-
-						sphere1.object3D.position.set(-3, 0, 0);
-						sphere1.object3D.scale.set(0.1, 0.1, 0.1);
-						sphere1.object3D.rotation.set(0, 0, 0);
+							animation_sphere_gold_oldest.appendChild(sphere1);
 
 
+							torus1.setAttribute('obj-model', {
+							              obj: '#torus_gold_oldest-obj',
+							              mtl: '#torus_gold_oldest-mtl'
+							            });
+
+							torus1.object3D.scale.set(0.5, 0.5, 0.5);
+							torus1.object3D.position.set(-1, 0, -6);
+							torus1.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '-1 0 -6',
+							              'to': '-1 1 -6',
+							              'loop': true,
+							              'dur': 3000,
+							              'dir': "alternate"
+							            });
 
 
-						torus1_parent.appendChild(torus1);
-						torus1_parent.appendChild(sphere1);
-						markerEl.appendChild(torus1_parent);
+							markerEl.appendChild(animation_sphere_gold_oldest);
+							markerEl.appendChild(torus1);
+
+							////////////////////////////////////////////////
 
 
-						// Torus 2
-						// textEl1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-						// textEl1.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
+							var animation_sphere_gold = document.createElement('a-entity');
+							var torus2 = document.createElement('a-entity');
+							var sphere2 = document.createElement('a-entity');
 
-						// torus2.setAttribute('obj-model', {
-						// 	obj: '#torus_gold_oldest-obj',
-						// 	mtl: '#torus_gold_oldest-mtl'
-						// });
-						// torus2.object3D.position.set(1.3, 0, 0);
-						// torus2.object3D.scale.set(0.2, 0.2, 0.2);
-						// torus2.object3D.rotation.set(0, 0, 0);
-						//
-						// sphere2.setAttribute('obj-model', {
-						// 	obj: '#sphere_gold_oldest-obj',
-						// 	mtl: '#sphere_gold_oldest-mtl'
-						// });
-						// sphere2.object3D.position.set(1.3, 0, 0);
-						// sphere2.object3D.scale.set(0.05, 0.05, 0.05);
-						// sphere2.object3D.rotation.set(0, 0, 0);
-						//
-						//
-						// torus2_parent.appendChild(torus2);
-						// torus2_parent.appendChild(sphere2);
-						// markerEl.appendChild(torus2_parent);
-						//
-						//
-						//
-						// // Torus 3
-						// // textEl2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-						// // textEl2.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						//
-						// torus3.setAttribute('obj-model', {
-						// 	obj: '#torus_gold_oldest-obj',
-						// 	mtl: '#torus_gold_oldest-mtl'
-						// });
-						// torus3.object3D.position.set(1.6, 0, 0);
-						// torus3.object3D.scale.set(0.3, 0.3, 0.3);
-						// torus3.object3D.rotation.set(0, 0, 0);
-						//
-						// sphere3.setAttribute('obj-model', {
-						// 	obj: '#sphere_gold_oldest-obj',
-						// 	mtl: '#sphere_gold_oldest-mtl'
-						// });
-						// sphere3.object3D.position.set(1.6, 0, 0);
-						// sphere3.object3D.scale.set(0.05, 0.05, 0.05);
-						// sphere3.object3D.rotation.set(0, 0, 0);
-						//
-						//
-						// torus3_parent.appendChild(torus3);
-						// torus3_parent.appendChild(sphere3);
-						// markerEl.appendChild(torus3_parent);
+							animation_sphere_gold.setAttribute('animation', {
+													  'property': 'rotation',
+													  'to': '0 360 0',
+													  'loop': true,
+														'dur': 4000
+													});
+							animation_sphere_gold.object3D.position.set(-1, 0, -6);
+
+							sphere2.setAttribute('obj-model', {
+														obj: '#sphere_gold-obj',
+														mtl: '#sphere_gold-mtl',
+
+													});
+
+							sphere2.object3D.position.set(5, 1, 0);
+							sphere2.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '5 1 0',
+							              'to': '5 2 0',
+							              'loop': true,
+							              'dur': 4000,
+							              'dir': "alternate"
+							            });
+
+							animation_sphere_gold.appendChild(sphere2);
+
+
+							torus2.setAttribute('obj-model', {
+														obj: '#torus-obj',
+														mtl: '#gold-mtl'
+													});
+
+							torus2.object3D.scale.set(0.8, 0.8, 0.8);
+							torus2.object3D.position.set(-1, 1, -6);
+							torus2.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '-1 1 -6',
+							              'to': '-1 2 -6',
+							              'loop': true,
+							              'dur': 4000,
+							              'dir': "alternate"
+							            });
+
+
+							markerEl.appendChild(torus2);
+							markerEl.appendChild(animation_sphere_gold);
+
+
+							///////////////////////////////////////////////
+
+							var animation_sphere_gold_older = document.createElement('a-entity');
+							var torus3 = document.createElement('a-entity');
+							var sphere3 = document.createElement('a-entity');
+
+							animation_sphere_gold_older.setAttribute('animation', {
+							              'property': 'rotation',
+							              'to': '0 360 0',
+							              'loop': true,
+							              'dur': 6000
+							            });
+							animation_sphere_gold_older.object3D.position.set(-1, 0, -6);
+
+							sphere3.setAttribute('obj-model', {
+							              obj: '#sphere_gold_older-obj',
+							              mtl: '#sphere_gold_older-mtl',
+
+							            });
+
+							sphere3.object3D.position.set(6, 2, 0);
+							sphere3.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '6 3 0',
+							              'to': '6 2 0',
+							              'loop': true,
+							              'dur': 4000,
+							              'dir': "alternate"
+							            });
+
+							animation_sphere_gold_older.appendChild(sphere3);
+
+
+							torus3.setAttribute('obj-model', {
+							              obj: '#torus_gold_older-obj',
+							              mtl: '#torus_gold_older-mtl'
+							            });
+
+							torus3.object3D.scale.set(1, 1, 1);
+							torus3.object3D.position.set(-1, 2, -6);
+
+							torus3.setAttribute('animation', {
+							              'property': 'position',
+							              'easing': 'linear',
+							              'from': '-1 3 -6',
+							              'to': '-1 2 -6',
+							              'loop': true,
+							              'dur': 4000,
+							              'dir': "alternate"
+							            });
+
+
+							markerEl.appendChild(torus3);
+							markerEl.appendChild(animation_sphere_gold_older);
 
 
 						// console.log('Model component registered successfully!' , ` latitude: ${lat}; longitude: ${long}`);
@@ -185,9 +257,10 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 
+				let myInstantTracker = document.getElementsByClassName("world");
+				myInstantTracker.setAttribute("zappar-instant", "placement-mode: false;");
 
-						console.log('Marker Found: ', markerId);
-
+				console.log('Marker Found: ', markerId);
 
 			});
 
@@ -198,35 +271,35 @@ AFRAME.registerComponent('registerevents', {
 		},
 	});
 
-AFRAME.registerComponent('camera-listener', {
-  tick: function () {
-    var cameraEl = this.el.sceneEl.camera.el;
-    console.log("yang posisi ", cameraEl.getAttribute('position'));
-    console.log("yang rotasi ", cameraEl.getAttribute('rotation'));
-
-    // Do something.
-  }
-});
-
-AFRAME.registerComponent('rotation-reader', {
-  /**
-   * We use IIFE (immediately-invoked function expression) to only allocate one
-   * vector or euler and not re-create on every tick to save memory.
-   */
-  tick: (function () {
-    var position = new THREE.Vector3();
-    var quaternion = new THREE.Quaternion();
-
-
-    return function () {
-      var tes_position = this.el.object3D.getWorldPosition(position);
-      var rotation = this.el.object3D.getWorldQuaternion(quaternion);
-			// position.setFromMatrixPosition(this.el.object3D.matrixWorld);
-			// console.log("Position from setFromMatrixPosition: " + position.x + " " + position.y + " " + position.z);
-			// console.log("Position from getWorldPosition: ", tes_position);
-			// console.log("Position from getWorldPosition: ", position.setFromMatrixPosition(this.el.object3D.matrixWorld));
-			// console.log("rotation: ", rotation);
-      // position and rotation now contain vector and quaternion in world space.
-    };
-  })()
-});
+// AFRAME.registerComponent('camera-listener', {
+//   tick: function () {
+//     var cameraEl = this.el.sceneEl.camera.el;
+//     console.log("yang posisi ", cameraEl.getAttribute('position'));
+//     console.log("yang rotasi ", cameraEl.getAttribute('rotation'));
+//
+//     // Do something.
+//   }
+// });
+//
+// AFRAME.registerComponent('rotation-reader', {
+//   /**
+//    * We use IIFE (immediately-invoked function expression) to only allocate one
+//    * vector or euler and not re-create on every tick to save memory.
+//    */
+//   tick: (function () {
+//     var position = new THREE.Vector3();
+//     var quaternion = new THREE.Quaternion();
+//
+//
+//     return function () {
+//       var tes_position = this.el.object3D.getWorldPosition(position);
+//       var rotation = this.el.object3D.getWorldQuaternion(quaternion);
+// 			// position.setFromMatrixPosition(this.el.object3D.matrixWorld);
+// 			// console.log("Position from setFromMatrixPosition: " + position.x + " " + position.y + " " + position.z);
+// 			// console.log("Position from getWorldPosition: ", tes_position);
+// 			// console.log("Position from getWorldPosition: ", position.setFromMatrixPosition(this.el.object3D.matrixWorld));
+// 			// console.log("rotation: ", rotation);
+//       // position and rotation now contain vector and quaternion in world space.
+//     };
+//   })()
+// });
