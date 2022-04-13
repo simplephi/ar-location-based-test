@@ -71,11 +71,12 @@ AFRAME.registerComponent('markers_start',{
 							            });
 							animation_sphere_gold_oldest.object3D.position.set(-1, 0, -6);
 
-							sphere1.setAttribute('obj-model', {
-							              obj: '#sphere_gold_oldest-obj',
-							              mtl: '#sphere_gold_oldest-mtl',
-
-							            });
+							// sphere1.setAttribute('obj-model', {
+							//               obj: '#sphere_gold_oldest-obj',
+							//               mtl: '#sphere_gold_oldest-mtl',
+							//
+							//             });
+							sphere1.setAttribute('gltf-model', '#sphere_gold_oldest-gltf');
 
 							sphere1.object3D.position.set(6, 0, 0);
 							sphere1.setAttribute('animation', {
@@ -127,11 +128,12 @@ AFRAME.registerComponent('markers_start',{
 													});
 							animation_sphere_gold.object3D.position.set(-1, 0, -6);
 
-							sphere2.setAttribute('obj-model', {
-														obj: '#sphere_gold-obj',
-														mtl: '#sphere_gold-mtl',
-
-													});
+							// sphere2.setAttribute('obj-model', {
+							// 							obj: '#sphere_gold-obj',
+							// 							mtl: '#sphere_gold-mtl',
+							//
+							// 						});
+							sphere2.setAttribute('gltf-model', '#sphere_gold-gltf');
 
 							sphere2.object3D.position.set(6, 1, 0);
 							sphere2.setAttribute('animation', {
@@ -183,11 +185,12 @@ AFRAME.registerComponent('markers_start',{
 							            });
 							animation_sphere_gold_older.object3D.position.set(-1, 0, -6);
 
-							sphere3.setAttribute('obj-model', {
-							              obj: '#sphere_gold_older-obj',
-							              mtl: '#sphere_gold_older-mtl',
-
-							            });
+							// sphere3.setAttribute('obj-model', {
+							//               obj: '#sphere_gold_older-obj',
+							//               mtl: '#sphere_gold_older-mtl',
+							//
+							//             });
+							sphere3.setAttribute('gltf-model', '#sphere_gold_older-gltf');
 
 							sphere3.object3D.position.set(6, 2, 0);
 							sphere3.setAttribute('animation', {
