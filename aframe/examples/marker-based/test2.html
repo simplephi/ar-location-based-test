@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
-    <script src="https://libs.zappar.com/zappar-aframe/0.2.5/zappar-aframe.js"></script>
 
     <body style="margin : 0px; overflow: hidden;">
 
-        <a-scene id="scene1">
+        <a-scene>
 
 
-          <a-entity camera zappar-camera>
+          <a-entity camera foo>
 
   				</a-entity>
 
-          <a-entity zappar-instant="placement-mode:true;" id="instant-tracker">
-  					<a-box id="box1" color="red" rotation="0 0 0"></a-box>
-  				</a-entity>
+          <p style="position: fixed; z-index: 999;"></p>
 
 
         </a-scene>
 
-      <script>
+        <script>
+          AFRAME.registerComponent("foo", {
+            init: function() {
+              // i'll keep the local position here
+              this.localpos = new THREE.Vector3();
+              // I'll keep the world position here
+              this.worldpos = new THREE.Vector3();
+              // this is the reference to the <p> element
+              this.textEl = document.querySelector("p")
+            },
+            // utility function
+            posToString: function(pos) {
+              return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
+            },
+            // called on each frame
+            tick: function() {
+              // getAttribute("position") has the local position
+              // this.el.object3D.position has the local position
+              // this.el.getObject3D("mesh").position has the local position
+              this.localpos.copy(this.el.getAttribute("position"))
+              this.el.getObject3D("mesh").getWorldPosition(this.worldpos)
 
-        var scene = document.querySelector('#scene1');
-        scene.addActionListener('click', function() {
-          let myInstantTracker = document.querySelector("#instant-tracker");
-          myInstantTracker.setAttribute("zappar-instant", "placement-mode: false;");
-
-        })
-
-      </script>
+              // compose the displayed message
+              let msg = "";
+              msg += "Sphere local position:" + this.posToString(this.localpos)
+              msg += "<br>"
+              msg += "Sphere world position:" + this.posToString(this.worldpos)
+              this.textEl.innerHTML = msg
+            }
+          })
+        </script>
     </body>
 </html>
