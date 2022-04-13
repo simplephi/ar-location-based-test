@@ -77,12 +77,12 @@ AFRAME.registerComponent('markers_start',{
 
 							            });
 
-							sphere1.object3D.position.set(3, 0, 0);
+							sphere1.object3D.position.set(6, 0, 0);
 							sphere1.setAttribute('animation', {
 							              'property': 'position',
 							              'easing': 'linear',
-							              'from': '3 0 0',
-							              'to': '3 1 0',
+							              'from': '6 0 0',
+							              'to': '6 1 0',
 							              'loop': true,
 							              'dur': 3000,
 							              'dir': "alternate"
@@ -96,7 +96,7 @@ AFRAME.registerComponent('markers_start',{
 							              mtl: '#torus_gold_oldest-mtl'
 							            });
 
-							torus1.object3D.scale.set(0.5, 0.5, 0.5);
+							torus1.object3D.scale.set(1, 1, 1);
 							torus1.object3D.position.set(-1, 0, -6);
 							torus1.setAttribute('animation', {
 							              'property': 'position',
@@ -133,12 +133,12 @@ AFRAME.registerComponent('markers_start',{
 
 													});
 
-							sphere2.object3D.position.set(5, 1, 0);
+							sphere2.object3D.position.set(6, 1, 0);
 							sphere2.setAttribute('animation', {
 							              'property': 'position',
 							              'easing': 'linear',
-							              'from': '5 1 0',
-							              'to': '5 2 0',
+							              'from': '6 1 0',
+							              'to': '6 2 0',
 							              'loop': true,
 							              'dur': 4000,
 							              'dir': "alternate"
@@ -152,7 +152,7 @@ AFRAME.registerComponent('markers_start',{
 														mtl: '#gold-mtl'
 													});
 
-							torus2.object3D.scale.set(0.8, 0.8, 0.8);
+							torus2.object3D.scale.set(1, 1, 1);
 							torus2.object3D.position.set(-1, 1, -6);
 							torus2.setAttribute('animation', {
 							              'property': 'position',
