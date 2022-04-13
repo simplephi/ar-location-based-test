@@ -1,20 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
-	
-        <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-entity
-            position="0 0 0"
-            rotation="0 0 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="../image-tracking/nft/trex/scene.gltf"
-            ></a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script>
+  AFRAME.registerComponent("foo", {
+    init: function() {
+      // i'll keep the local position here
+      this.localpos = new THREE.Vector3();
+      // I'll keep the world position here
+      this.worldpos = new THREE.Vector3();
+      // this is the reference to the <p> element
+      this.textEl = document.querySelector("p")
+    },
+    // utility function
+    posToString: function(pos) {
+      return pos.x.toFixed(2) + " " + pos.y.toFixed(2) + " " + pos.z.toFixed(2);
+    },
+    // called on each frame
+    tick: function() {
+      // getAttribute("position") has the local position
+      // this.el.object3D.position has the local position
+      // this.el.getObject3D("mesh").position has the local position
+      this.localpos.copy(this.el.getAttribute("position"))
+      this.el.getObject3D("mesh").getWorldPosition(this.worldpos)
+
+      // compose the displayed message
+      let msg = "";
+      msg += "Sphere local position:" + this.posToString(this.localpos)
+      msg += "<br>"
+      msg += "Sphere world position:" + this.posToString(this.worldpos)
+      this.textEl.innerHTML = msg
+    }
+  })
+</script>
+<p style="position: fixed; z-index: 999;"></p>
+<a-scene>
+  <a-box position="0 1 -4" color="blue"
+         animation="property: rotation;from: ; to:0 -360 0; loop:true; easing:linear; dur:3000">
+    <a-sphere position="2 0 0" color="green" radius="0.25" foo></a-sphere>
+  </a-box>
+</a-scene>
