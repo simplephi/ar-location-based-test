@@ -133,7 +133,7 @@ AFRAME.registerComponent('registerevents', {
 													mtl: '#spiral-mtl'
 												});
 						spiral.object3D.position.set(0, 0.5, 0);
-						spiral.object3D.scale.set(0.2, 0.2, 0.2);
+						spiral.object3D.scale.set(0.5, 0.5, 0.5);
 						spiral.object3D.rotation.set(0, 0, 0);
 
 						spiral.setAttribute('animation', {
@@ -333,7 +333,7 @@ AFRAME.registerComponent('registerevents', {
 
 
 
-			});
+			}, {once : true});
 
 			marker.addEventListener("markerLost",() =>{
 				var markerId = marker.id;
