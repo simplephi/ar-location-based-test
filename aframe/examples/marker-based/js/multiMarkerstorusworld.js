@@ -108,7 +108,7 @@ AFRAME.registerComponent('registerevents', {
 
 
 				var cameraPosition = document.querySelector('[gps-camera]').object3D.position;
-				console.log('Marker Position: ', marker.position.add(cameraPosition));
+				console.log('Marker Position: ', cameraPosition);
 
 
 				// ADD MODELS AFTER MARKER FOUND
