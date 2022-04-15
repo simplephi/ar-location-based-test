@@ -132,8 +132,8 @@ AFRAME.registerComponent('registerevents', {
 													obj: '#spiral-obj',
 													mtl: '#spiral-mtl'
 												});
-						spiral.object3D.position.set(0, 0.5, 0);
-						spiral.object3D.scale.set(0.5, 0.5, 0.5);
+						spiral.object3D.position.set(0, 0, 0);
+						spiral.object3D.scale.set(0.3, 0.3, 0.3);
 						spiral.object3D.rotation.set(0, 0, 0);
 
 						spiral.setAttribute('animation', {
@@ -190,12 +190,12 @@ AFRAME.registerComponent('registerevents', {
 												});
 
 						torus1.object3D.scale.set(1, 1, 1);
-						torus1.object3D.position.set(-1, 0, -6);
+						torus1.object3D.position.set(1, 0, -6);
 						torus1.setAttribute('animation', {
 													'property': 'position',
 													'easing': 'linear',
-													'from': '-1 0 -6',
-													'to': '-1 1 -6',
+													'from': '1 0 -6',
+													'to': '1 1 -6',
 													'loop': true,
 													'dur': 3000,
 													'dir': "alternate"
@@ -251,12 +251,12 @@ AFRAME.registerComponent('registerevents', {
 												});
 
 						torus2.object3D.scale.set(1, 1, 1);
-						torus2.object3D.position.set(-1, 1, -6);
+						torus2.object3D.position.set(1, 1, -6);
 						torus2.setAttribute('animation', {
 													'property': 'position',
 													'easing': 'linear',
-													'from': '-1 1 -6',
-													'to': '-1 2 -6',
+													'from': '1 1 -6',
+													'to': '1 2 -6',
 													'loop': true,
 													'dur': 4000,
 													'dir': "alternate"
@@ -311,13 +311,13 @@ AFRAME.registerComponent('registerevents', {
 												});
 
 						torus3.object3D.scale.set(1, 1, 1);
-						torus3.object3D.position.set(-1, 2, -6);
+						torus3.object3D.position.set(1, 2, -6);
 
 						torus3.setAttribute('animation', {
 													'property': 'position',
 													'easing': 'linear',
-													'from': '-1 3 -6',
-													'to': '-1 2 -6',
+													'from': '1 3 -6',
+													'to': '1 2 -6',
 													'loop': true,
 													'dur': 4000,
 													'dir': "alternate"
