@@ -153,9 +153,11 @@ AFRAME.registerComponent('registerevents', {
 						var animation_sphere_gold_oldest = document.createElement('a-entity');
 						var torus1 = document.createElement('a-entity');
 						var sphere1 = document.createElement('a-entity');
+						var combine1 = document.createElement('a-entity');
 
 						// animation_sphere_gold_oldest.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						animation_sphere_gold_oldest.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+						// animation_sphere_gold_oldest.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+
 
             animation_sphere_gold_oldest.setAttribute('animation', {
               'property': 'rotation',
@@ -219,8 +221,10 @@ AFRAME.registerComponent('registerevents', {
                         });
 
 
-            body.appendChild(animation_sphere_gold_oldest);
-            body.appendChild(torus1);
+            combine1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+            combine1.appendChild(animation_sphere_gold_oldest);
+            combine1.appendChild(torus1);
+            body.appendChild(combine1);
 
 						////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -228,9 +232,11 @@ AFRAME.registerComponent('registerevents', {
 						var animation_sphere_gold = document.createElement('a-entity');
 						var torus2 = document.createElement('a-entity');
 						var sphere2 = document.createElement('a-entity');
+            var combine2 = document.createElement('a-entity');
 
 						// animation_sphere_gold.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						animation_sphere_gold.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+						// animation_sphere_gold.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+
 
             animation_sphere_gold.setAttribute('animation', {
 						  'property': 'rotation',
@@ -293,8 +299,10 @@ AFRAME.registerComponent('registerevents', {
               THREE.Math.degToRad(-4)
             );
 
-            body.appendChild(torus2);
-            body.appendChild(animation_sphere_gold);
+            combine2.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+            combine2.appendChild(torus2);
+            combine2.appendChild(animation_sphere_gold);
+            body.appendChild(combine2);
 
 
 						///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -302,9 +310,12 @@ AFRAME.registerComponent('registerevents', {
 						var animation_sphere_gold_older = document.createElement('a-entity');
 						var torus3 = document.createElement('a-entity');
 						var sphere3 = document.createElement('a-entity');
+            var combine3 = document.createElement('a-entity');
 
 						// animation_sphere_gold_older.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						animation_sphere_gold_older.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+						// animation_sphere_gold_older.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+
+
             animation_sphere_gold_older.setAttribute('animation', {
               'property': 'rotation',
               'to': '0 360 0',
@@ -365,8 +376,10 @@ AFRAME.registerComponent('registerevents', {
               THREE.Math.degToRad(4)
             );
 
-            body.appendChild(torus3);
-            body.appendChild(animation_sphere_gold_older);
+            combine3.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
+            combine3.appendChild(torus3);
+            combine3.appendChild(animation_sphere_gold_older);
+            body.appendChild(combine3);
 
 						 console.log('successfully show AR on location based');
 
