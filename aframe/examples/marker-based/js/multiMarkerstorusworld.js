@@ -149,7 +149,8 @@ AFRAME.registerComponent('registerevents', {
 						body.appendChild(spiral);
 
 
-						/////////////////////////////////////////////////////////////////////////////
+						///////////////////////////////////////////////////////////////////////////////////////////////////
+
 						var animation_sphere_gold_oldest = document.createElement('a-entity');
 						var torus1 = document.createElement('a-entity');
 						var sphere1 = document.createElement('a-entity');
@@ -184,6 +185,7 @@ AFRAME.registerComponent('registerevents', {
 
 
             sphere1.object3D.position.set(6, 1, 0);
+            sphere1.object3D.scale.set(2, 2, 2);
             sphere1.setAttribute('animation', {
                           'property': 'position',
                           'easing': 'linear',
@@ -262,6 +264,7 @@ AFRAME.registerComponent('registerevents', {
 
 
             sphere2.object3D.position.set(-6, 3, 0);
+            sphere2.object3D.scale.set(2, 2, 2);
             sphere2.setAttribute('animation', {
                           'property': 'position',
                           'easing': 'linear',
@@ -339,6 +342,7 @@ AFRAME.registerComponent('registerevents', {
             /* sphere3.setAttribute('gltf-model', '#sphere_gold_older-glb'); */
 
             sphere3.object3D.position.set(6, 6, 0);
+            sphere3.object3D.scale.set(2, 2, 2);
             sphere3.setAttribute('animation', {
                           'property': 'position',
                           'easing': 'linear',
