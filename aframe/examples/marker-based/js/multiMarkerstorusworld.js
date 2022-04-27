@@ -167,7 +167,7 @@ AFRAME.registerComponent('registerevents', {
               'dur': 60000
             });
 
-            animation_sphere_gold_oldest.object3D.position.set(-0.9, 0, -6);
+            animation_sphere_gold_oldest.object3D.position.set(0, 0, -1);
 
             animation_sphere_gold_oldest.object3D.rotation.set(
               THREE.Math.degToRad(0),
@@ -184,15 +184,15 @@ AFRAME.registerComponent('registerevents', {
             /* sphere1.setAttribute('gltf-model', '#sphere_gold_oldest-glb'); */
 
 
-            sphere1.object3D.position.set(0, 1, 0);
-            sphere1.object3D.scale.set(0.6, 0.6, 0.6);
+            sphere1.object3D.position.set(0, 0, 0);
+            sphere1.object3D.scale.set(0.1, 0.1, 0.1);
             sphere1.setAttribute('animation', {
               'property': 'position',
               'easing': 'linear',
-              'from': '1.1 0 0',
-              'to': '1.1 1 0',
+              'from': '0.3 1 0.2',
+              'to': '0.3 1.5 0.2',
               'loop': true,
-              'dur': 4000,
+              'dur': 5000,
               'dir': "alternate"
             });
 
@@ -204,21 +204,21 @@ AFRAME.registerComponent('registerevents', {
                           mtl: '#torus_gold_oldest-mtl'
                         });
 
-            torus1.object3D.scale.set(0.2, 0.2, 0.2);
+            torus1.object3D.scale.set(0.05, 0.05, 0.05);
             torus1.object3D.rotation.set(
               THREE.Math.degToRad(0),
               THREE.Math.degToRad(0),
               THREE.Math.degToRad(4)
             );
 
-            torus1.object3D.position.set(-1, 0, -6);
+            torus1.object3D.position.set(0, 1, -1);
             torus1.setAttribute('animation', {
                           'property': 'position',
                           'easing': 'linear',
-                          'from': '-1 0 -6',
-                          'to': '-1 1 -6',
+                          'from': '0 1 -1',
+                          'to': '0 1.5 -1',
                           'loop': true,
-                          'dur': 4000,
+                          'dur': 5000,
                           'dir': "alternate"
                         });
 
@@ -247,7 +247,7 @@ AFRAME.registerComponent('registerevents', {
 							'dur': 3600000
 							 /* 'dur': 5000 */
 						});
-            animation_sphere_gold.object3D.position.set(-1.1, 0, -6);
+            animation_sphere_gold.object3D.position.set(0, 0, -1);
 
             animation_sphere_gold.object3D.rotation.set(
               THREE.Math.degToRad(0),
@@ -263,17 +263,17 @@ AFRAME.registerComponent('registerevents', {
             /* sphere2.setAttribute('gltf-model', '#sphere_gold-glb'); */
 
 
-            sphere2.object3D.position.set(0, 1, 0);
-            sphere2.object3D.scale.set(0.6, 0.6, 0.6);
-            sphere2.setAttribute('animation', {
-                          'property': 'position',
-                          'easing': 'linear',
-                          'from': '-1.2 1 0',
-                          'to': '-1.2 2 0',
-                          'loop': true,
-                          'dur': 5000,
-                          'dir': "alternate"
-                        });
+           sphere2.object3D.position.set(0, 0, 0);
+           sphere2.object3D.scale.set(0.1, 0.1, 0.1);
+           sphere2.setAttribute('animation', {
+                        'property': 'position',
+                        'easing': 'linear',
+                        'from': '-0.3 1.5 0.2',
+                        'to': '-0.3 1.9 0.2',
+                        'loop': true,
+                        'dur': 6000,
+                        'dir': "alternate"
+                      });
 
             animation_sphere_gold.appendChild(sphere2);
 
@@ -285,17 +285,17 @@ AFRAME.registerComponent('registerevents', {
 
             /* torus2.setAttribute('gltf-model', '#torus_gold-gltf'); */
 
-            torus2.object3D.scale.set(0.2, 0.2, 0.2);
-            torus2.object3D.position.set(-1, 1, -6);
-            torus2.setAttribute('animation', {
-                          'property': 'position',
-                          'easing': 'linear',
-                          'from': '-1 1 -6',
-                          'to': '-1 2 -6',
-                          'loop': true,
-                          'dur': 5000,
-                          'dir': "alternate"
-                        });
+           torus2.object3D.scale.set(0.05, 0.05, 0.05);
+           torus2.object3D.position.set(0, 1, -1);
+           torus2.setAttribute('animation', {
+                        'property': 'position',
+                        'easing': 'linear',
+                        'from': '0 1.5 -1',
+                        'to': '0 1.9 -1',
+                        'loop': true,
+                        'dur': 6000,
+                        'dir': "alternate"
+                      });
              torus2.object3D.rotation.set(
               THREE.Math.degToRad(0),
               THREE.Math.degToRad(0),
@@ -326,7 +326,7 @@ AFRAME.registerComponent('registerevents', {
               'dur': 86400000
               /* 'dur': 5000 */
             });
-            animation_sphere_gold_older.object3D.position.set(-0.9, 0, -6);
+            animation_sphere_gold_older.object3D.position.set(0, 0, -1);
 
             animation_sphere_gold_older.object3D.rotation.set(
               THREE.Math.degToRad(0),
@@ -342,16 +342,16 @@ AFRAME.registerComponent('registerevents', {
             /* sphere3.setAttribute('gltf-model', '#sphere_gold_older-glb'); */
 
             sphere3.object3D.position.set(0, 2, 0);
-            sphere3.object3D.scale.set(0.6, 0.6, 0.6);
-            sphere3.setAttribute('animation', {
-                          'property': 'position',
-                          'easing': 'linear',
-                          'from': '1.1 2 0',
-                          'to': '1.1 3 0',
-                          'loop': true,
-                          'dur': 6000,
-                          'dir': "alternate"
-                        });
+           sphere3.object3D.scale.set(0.1, 0.1, 0.1);
+           sphere3.setAttribute('animation', {
+                        'property': 'position',
+                        'easing': 'linear',
+                        'from': '0.3 2.3 0.2',
+                        'to': '0.3 1.9 0.2',
+                        'loop': true,
+                        'dur': 7000,
+                        'dir': "alternate"
+                      });
 
             animation_sphere_gold_older.appendChild(sphere3);
 
@@ -361,16 +361,16 @@ AFRAME.registerComponent('registerevents', {
                           mtl: '#torus_gold_older-mtl'
                         });
 
-            torus3.object3D.scale.set(0.2, 0.2, 0.2);
-            torus3.object3D.position.set(-1, 2, -6);
+            torus3.object3D.scale.set(0.05, 0.05, 0.05);
+             torus3.object3D.position.set(-1, 2, -1);
 
-            torus3.setAttribute('animation', {
+             torus3.setAttribute('animation', {
                           'property': 'position',
                           'easing': 'linear',
-                          'from': '-1 2 -6',
-                          'to': '-1 3 -6',
+                          'from': '0 2.3 -1',
+                          'to': '0 1.9 -1',
                           'loop': true,
-                          'dur': 6000,
+                          'dur': 7000,
                           'dir': "alternate"
                         });
 
