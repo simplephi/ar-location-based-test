@@ -136,8 +136,8 @@ AFRAME.registerComponent('registerevents', {
 						// });
             spiral.setAttribute('gltf-model', '#spiral-gltf');
 
-            spiral.object3D.position.set(0, 1.5, 0);
-            spiral.object3D.scale.set(0.01, 0.01, 0.01);
+            spiral.object3D.position.set(0, 1.58, 0);
+            spiral.object3D.scale.set(0.003, 0.003, 0.003);
             spiral.object3D.rotation.set(0, 0, 0);
 
             spiral.setAttribute('animation', {
@@ -194,7 +194,7 @@ AFRAME.registerComponent('registerevents', {
               'property': 'position',
               'easing': 'linear',
               'from': '0.3 1 0.2',
-              'to': '0.3 1.5 0.2',
+              'to': '0.3 1.2 0.2',
               'loop': true,
               'dur': 6000,
               'dir': "alternate"
@@ -218,14 +218,14 @@ AFRAME.registerComponent('registerevents', {
 
             torus1.object3D.position.set(0, 1, -1);
             torus1.setAttribute('animation', {
-                          'property': 'position',
-                          'easing': 'linear',
-                          'from': '0 1 -1',
-                          'to': '0 1.5 -1',
-                          'loop': true,
-                          'dur': 6000,
-                          'dir': "alternate"
-                        });
+              'property': 'position',
+              'easing': 'linear',
+              'from': '0 1 -1',
+              'to': '0 1.2 -1',
+              'loop': true,
+              'dur': 6000,
+              'dir': "alternate"
+            });
 
 
             combine1.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
@@ -271,14 +271,14 @@ AFRAME.registerComponent('registerevents', {
            sphere2.object3D.position.set(0, 0, 0);
            sphere2.object3D.scale.set(0.1, 0.1, 0.1);
            sphere2.setAttribute('animation', {
-                        'property': 'position',
-                        'easing': 'linear',
-                        'from': '-0.3 1.5 0.2',
-                        'to': '-0.3 1.9 0.2',
-                        'loop': true,
-                        'dur': 7000,
-                        'dir': "alternate"
-                      });
+              'property': 'position',
+              'easing': 'linear',
+              'from': '-0.3 1.2 0.2',
+              'to': '-0.3 1.3 0.2',
+              'loop': true,
+              'dur': 7000,
+              'dir': "alternate"
+            });
 
             animation_sphere_gold.appendChild(sphere2);
 
@@ -293,14 +293,14 @@ AFRAME.registerComponent('registerevents', {
            torus2.object3D.scale.set(0.05, 0.05, 0.05);
            torus2.object3D.position.set(0, 1, -1);
            torus2.setAttribute('animation', {
-                        'property': 'position',
-                        'easing': 'linear',
-                        'from': '0 1.5 -1',
-                        'to': '0 1.9 -1',
-                        'loop': true,
-                        'dur': 7000,
-                        'dir': "alternate"
-                      });
+              'property': 'position',
+              'easing': 'linear',
+              'from': '0 1.2 -1',
+              'to': '0 1.3 -1',
+              'loop': true,
+              'dur': 7000,
+              'dir': "alternate"
+            });
              torus2.object3D.rotation.set(
               THREE.Math.degToRad(0),
               THREE.Math.degToRad(0),
@@ -349,14 +349,14 @@ AFRAME.registerComponent('registerevents', {
             sphere3.object3D.position.set(0, 2, 0);
            sphere3.object3D.scale.set(0.1, 0.1, 0.1);
            sphere3.setAttribute('animation', {
-                        'property': 'position',
-                        'easing': 'linear',
-                        'from': '0.3 2.3 0.2',
-                        'to': '0.3 1.9 0.2',
-                        'loop': true,
-                        'dur': 8000,
-                        'dir': "alternate"
-                      });
+              'property': 'position',
+              'easing': 'linear',
+              'from': '0.3 1.5 0.2',
+              'to': '0.3 1.3 0.2',
+              'loop': true,
+              'dur': 8000,
+              'dir': "alternate"
+            });
 
             animation_sphere_gold_older.appendChild(sphere3);
 
@@ -371,14 +371,14 @@ AFRAME.registerComponent('registerevents', {
              torus3.object3D.position.set(-1, 2, -1);
 
              torus3.setAttribute('animation', {
-                          'property': 'position',
-                          'easing': 'linear',
-                          'from': '0 2.3 -1',
-                          'to': '0 1.9 -1',
-                          'loop': true,
-                          'dur': 8000,
-                          'dir': "alternate"
-                        });
+              'property': 'position',
+              'easing': 'linear',
+              'from': '0 1.5 -1',
+              'to': '0 1.3 -1',
+              'loop': true,
+              'dur': 8000,
+              'dir': "alternate"
+            });
 
             torus3.object3D.rotation.set(
               THREE.Math.degToRad(0),
