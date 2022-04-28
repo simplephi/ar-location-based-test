@@ -128,11 +128,14 @@ AFRAME.registerComponent('registerevents', {
 						var spiral = document.createElement('a-entity');
 
 						// spiral.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long}`);
-						spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
-            spiral.setAttribute('obj-model', {
-							obj: '#spiral-obj',
-							mtl: '#spiral-mtl'
-						});
+
+
+            // spiral.setAttribute('obj-model', {
+						// 	obj: '#spiral-obj',
+						// 	mtl: '#spiral-mtl'
+						// });
+            spiral.setAttribute('gltf-model', '#spiral-gltf');
+
             spiral.object3D.position.set(0, 1.5, 0);
             spiral.object3D.scale.set(0.01, 0.01, 0.01);
             spiral.object3D.rotation.set(0, 0, 0);
@@ -145,6 +148,7 @@ AFRAME.registerComponent('registerevents', {
               'dir': "alternate"
             });
 
+            spiral.setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude}`);
 
 						body.appendChild(spiral);
 
@@ -175,13 +179,13 @@ AFRAME.registerComponent('registerevents', {
               THREE.Math.degToRad(4)
             );
 
-            sphere1.setAttribute('obj-model', {
-                          obj: '#sphere_gold_oldest-obj',
-                          mtl: '#sphere_gold_oldest-mtl',
+            // sphere1.setAttribute('obj-model', {
+            //               obj: '#sphere_gold_oldest-obj',
+            //               mtl: '#sphere_gold_oldest-mtl',
+            //
+            //             });
 
-                        });
-
-            /* sphere1.setAttribute('gltf-model', '#sphere_gold_oldest-glb'); */
+            sphere1.setAttribute('gltf-model', '#sphere_gold_oldest-gltf');
 
 
             sphere1.object3D.position.set(0, 0, 0);
@@ -192,17 +196,18 @@ AFRAME.registerComponent('registerevents', {
               'from': '0.3 1 0.2',
               'to': '0.3 1.5 0.2',
               'loop': true,
-              'dur': 5000,
+              'dur': 6000,
               'dir': "alternate"
             });
 
             animation_sphere_gold_oldest.appendChild(sphere1);
 
 
-            torus1.setAttribute('obj-model', {
-                          obj: '#torus_gold_oldest-obj',
-                          mtl: '#torus_gold_oldest-mtl'
-                        });
+            // torus1.setAttribute('obj-model', {
+            //               obj: '#torus_gold_oldest-obj',
+            //               mtl: '#torus_gold_oldest-mtl'
+            //             });
+            torus1.setAttribute('gltf-model', '#torus_gold_oldest-gltf');
 
             torus1.object3D.scale.set(0.05, 0.05, 0.05);
             torus1.object3D.rotation.set(
@@ -218,7 +223,7 @@ AFRAME.registerComponent('registerevents', {
                           'from': '0 1 -1',
                           'to': '0 1.5 -1',
                           'loop': true,
-                          'dur': 5000,
+                          'dur': 6000,
                           'dir': "alternate"
                         });
 
@@ -255,12 +260,12 @@ AFRAME.registerComponent('registerevents', {
               THREE.Math.degToRad(-5)
             );
 
-            sphere2.setAttribute('obj-model', {
-                          obj: '#sphere_gold-obj',
-                          mtl: '#sphere_gold-mtl',
-
-                        });
-            /* sphere2.setAttribute('gltf-model', '#sphere_gold-glb'); */
+            // sphere2.setAttribute('obj-model', {
+            //               obj: '#sphere_gold-obj',
+            //               mtl: '#sphere_gold-mtl',
+            //
+            //             });
+             sphere2.setAttribute('gltf-model', '#sphere_gold-gltf');
 
 
            sphere2.object3D.position.set(0, 0, 0);
@@ -271,19 +276,19 @@ AFRAME.registerComponent('registerevents', {
                         'from': '-0.3 1.5 0.2',
                         'to': '-0.3 1.9 0.2',
                         'loop': true,
-                        'dur': 6000,
+                        'dur': 7000,
                         'dir': "alternate"
                       });
 
             animation_sphere_gold.appendChild(sphere2);
 
 
-            torus2.setAttribute('obj-model', {
-                          obj: '#torus-obj',
-                          mtl: '#gold-mtl'
-                        });
+            // torus2.setAttribute('obj-model', {
+            //               obj: '#torus-obj',
+            //               mtl: '#gold-mtl'
+            //             });
 
-            /* torus2.setAttribute('gltf-model', '#torus_gold-gltf'); */
+             torus2.setAttribute('gltf-model', '#torus_gold-gltf');
 
            torus2.object3D.scale.set(0.05, 0.05, 0.05);
            torus2.object3D.position.set(0, 1, -1);
@@ -293,7 +298,7 @@ AFRAME.registerComponent('registerevents', {
                         'from': '0 1.5 -1',
                         'to': '0 1.9 -1',
                         'loop': true,
-                        'dur': 6000,
+                        'dur': 7000,
                         'dir': "alternate"
                       });
              torus2.object3D.rotation.set(
@@ -334,12 +339,12 @@ AFRAME.registerComponent('registerevents', {
               THREE.Math.degToRad(5)
             );
 
-            sphere3.setAttribute('obj-model', {
-                          obj: '#sphere_gold_older-obj',
-                          mtl: '#sphere_gold_older-mtl',
-
-                        });
-            /* sphere3.setAttribute('gltf-model', '#sphere_gold_older-glb'); */
+            // sphere3.setAttribute('obj-model', {
+            //               obj: '#sphere_gold_older-obj',
+            //               mtl: '#sphere_gold_older-mtl',
+            //
+            //             });
+            sphere3.setAttribute('gltf-model', '#sphere_gold_older-gltf');
 
             sphere3.object3D.position.set(0, 2, 0);
            sphere3.object3D.scale.set(0.1, 0.1, 0.1);
@@ -349,17 +354,18 @@ AFRAME.registerComponent('registerevents', {
                         'from': '0.3 2.3 0.2',
                         'to': '0.3 1.9 0.2',
                         'loop': true,
-                        'dur': 7000,
+                        'dur': 8000,
                         'dir': "alternate"
                       });
 
             animation_sphere_gold_older.appendChild(sphere3);
 
 
-            torus3.setAttribute('obj-model', {
-                          obj: '#torus_gold_older-obj',
-                          mtl: '#torus_gold_older-mtl'
-                        });
+            // torus3.setAttribute('obj-model', {
+            //               obj: '#torus_gold_older-obj',
+            //               mtl: '#torus_gold_older-mtl'
+            //             });
+            torus3.setAttribute('gltf-model', '#torus_gold_older-gltf');
 
             torus3.object3D.scale.set(0.05, 0.05, 0.05);
              torus3.object3D.position.set(-1, 2, -1);
@@ -370,7 +376,7 @@ AFRAME.registerComponent('registerevents', {
                           'from': '0 2.3 -1',
                           'to': '0 1.9 -1',
                           'loop': true,
-                          'dur': 7000,
+                          'dur': 8000,
                           'dir': "alternate"
                         });
 
