@@ -136,7 +136,7 @@ AFRAME.registerComponent('registerevents', {
 						// });
             spiral.setAttribute('gltf-model', '#spiral-gltf');
 
-            spiral.object3D.position.set(0, 1.58, 0);
+            spiral.object3D.position.set(0, 1, 0);
             spiral.object3D.scale.set(0.05, 0.05, 0.05);
             spiral.object3D.rotation.set(0, 0, 0);
 
