@@ -95,7 +95,7 @@ AFRAME.registerComponent('registerevents', {
 
             mosquito.object3D.position.set(0, 1, -3);
             mosquito.object3D.scale.set(0.05, 0.05, 0.05);
-            mosquito.object3D.rotation.set(0, 0, 0);
+            mosquito.object3D.rotation.set(0, 45, 0);
 
             // mosquito.setAttribute('animation', {
             //   'property': 'rotation',
