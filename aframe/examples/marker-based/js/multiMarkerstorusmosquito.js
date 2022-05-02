@@ -89,7 +89,7 @@ AFRAME.registerComponent('registerevents', {
 
 
 
-            mosquito.setAttribute('gltf-model', '#spiral-gltf');
+            mosquito.setAttribute('gltf-model', '#mosquito-gltf');
             mosquito.setAttribute('animation-mixer', 'clip: run_*');
 
 
