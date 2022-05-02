@@ -90,7 +90,7 @@ AFRAME.registerComponent('registerevents', {
 
 
             mosquito.setAttribute('gltf-model', '#mosquito-gltf');
-            mosquito.setAttribute('animation-mixer');
+            mosquito.setAttribute('animation-mixer', '');
 
 
             mosquito.object3D.position.set(0, 1, 0);
